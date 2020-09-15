@@ -1,0 +1,67 @@
+//
+// COOKIES
+// --------------------------------------------------
+.info-cookies {
+	padding: 36px 0px;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(#000, .9);
+	z-index: 100;
+	color: #ddd;
+
+	@include media-breakpoint-up(md) {
+		left: 80px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		.modal-open &,
+		.meniu-activ & {
+			padding-right: 17px;
+		}
+	}
+
+	.col-xl-6 {position: static;}
+
+	p {
+		margin: rem(22px 0px);
+		padding: 0;
+
+		&:first-child {margin-top: 0;}
+		&:last-child {margin-bottom: 0;}
+	}
+
+	.link-white {
+		color: #ddd;
+		text-decoration: underline;
+
+		&:hover {color: $primary;}		
+	}
+
+	.butoane {
+		margin-top: 25px;
+
+		@include media-breakpoint-up(lg) {
+			margin: 0;
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+
+	.no-cookies {
+		padding-left: rem(8px);
+		padding-right: rem(8px);
+		position: absolute;
+		top: -4px;
+		right: 2px;
+
+		@include media-breakpoint-up(lg) {
+			position: relative;
+			padding: 0;
+			margin-left: 50px;
+
+			i {margin: 8px 0px -8px 0px;}
+		}
+	}
+}

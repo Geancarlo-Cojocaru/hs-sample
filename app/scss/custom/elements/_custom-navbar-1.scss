@@ -1,0 +1,1111 @@
+//
+// PARAMETRI MENIU GENERAL
+// --------------------------------------------------
+$breakpoint-colaps:                 sm !default;
+$breakpoint-extinde:                md !default;
+
+// ascunde la scroll | adauga .menu-scroll-up la meniu sau container meniu
+$ascunde-la-scroll:                 false !default;
+
+// parametri nivel 1
+$nivel-1-font-family:               $font-family-sans-serif !default;
+$nivel-2-font-family:               $font-family-sans-serif !default;
+
+// parametri nivel 2
+$nume-categorie-font-family:        $font-family-sans-serif !default;
+$submeniu-dropdown-toggle-icon:     "\e315" !default; // keyboard right
+
+
+
+//
+// PARAMETRI MENIU COLAPSABIL
+// --------------------------------------------------
+$inaltime-meniu-devices:            48px !default;
+$fundal-meniu-devices:              $light-1 !default;
+
+// navigare
+$navigare-padding-xs:               20px $grid-gutter-width-xs * 2;
+$navigare-padding:                  20px $grid-gutter-width * 2;
+
+
+// parametri nivel 1
+$nivel-1-font-size:                 rem(18px) !default;
+$nivel-1-font-color:                $headings-color !default;
+$nivel-1-font-weight:               bold !default;
+$nivel-1-text-transform:            none !default;
+
+$nivel-1-padding:                   rem(9px 0) !default;
+$nivel-1-border-color:              rgba(#000, .06) !default;
+
+$nivel-1-icon-size:                 rem(20px) !default;
+$nivel-1-icon-color:                $primary !default;
+$nivel-1-icon-right:                3px !default;
+
+
+// parametri meniu secundar
+$meniu-secundar-fz:                 rem(16px) !default;
+$meniu-secundar-margin:             rem(10px 0px) !default;
+
+
+// parametri nivel 2
+$nivel-2-font-size:                 rem(16px) !default;
+$nivel-2-font-color:                $body-color !default;
+$nivel-2-font-weight:               normal !default;
+$nivel-2-text-transform:            none !default;
+
+$nivel-2-margin-xs:                 0 $grid-gutter-width-xs !default;
+$nivel-2-margin:                    0 $grid-gutter-width !default;
+$nivel-2-padding:                   rem(8px 0) !default;
+$nivel-2-border-color:              rgba(#000, .06) !default;
+
+$nivel-2-icon-size:                 rem(21px) !default;
+$nivel-2-icon-color:                $primary !default;
+$nivel-2-icon-right:                3px !default;
+
+
+// parametri back element
+$back-element-margin-xs:            0 $grid-gutter-width-xs !default;
+$back-element-margin:               0 $grid-gutter-width !default;
+$back-element-padding-xs:           10px 0 16px 13px !default;
+$back-element-padding:              10px 0 16px 13px !default;
+
+$back-element-font-family:          $font-family-sans-serif !default;
+$back-element-font-size:            rem(11px) !default;
+$back-element-color:                #777 !default;
+$back-element-font-weight:          normal !default;
+$back-element-text-transform:       uppercase !default;
+$back-element-background:           transparent !default;
+$back-element-border-color:         transparent !default;
+
+$back-element-icon-size:            rem(18px) !default;
+$back-element-icon-top:             rem(6px) !default;
+$back-element-icon-left-xs:         -6px !default;
+$back-element-icon-left:            -6px !default;
+
+
+// parametri nume categorie
+$nume-categorie-margin-xs:          14px $grid-gutter-width-xs 12px $grid-gutter-width-xs !default;
+$nume-categorie-margin:             14px $grid-gutter-width 12px $grid-gutter-width !default;
+
+$nume-categorie-font-size:          rem(18px) !default;
+$nume-categorie-font-weight:        bold !default;
+$nume-categorie-color:              $headings-color !default;
+$nume-categorie-text-transform:     none !default;
+
+
+// extra nav icons
+$extra-nav-height:                  50px !default;
+$extra-nav-background:              transparent !default;
+
+$extra-nav-icon-size:               rem(18px) !default;
+$extra-nav-icon-margins:            rem(0) !default;
+$extra-nav-border-color:            rgba(#000, .06) !default;
+
+$extra-nav-link-margins:            rem(5px 0) !default;
+$extra-nav-link-color:              $body-color !default;
+
+$extra-nav-text-color:              $body-color !default;
+$extra-nav-text-size:               rem(10px) !default;
+$extra-nav-text-transform:          uppercase !default;
+$extra-nav-text-weight:             normal !default;
+
+
+
+
+
+
+//
+// PARAMETRI MENIU LARGE
+// --------------------------------------------------
+$inaltime-meniu-large:            auto !default;
+$fundal-meniu-large:              transparent !default;
+
+
+// parametri nivel 1
+$nivel-1-lg-font-size:            rem(20px) !default;
+$nivel-1-lg-font-weight:          bold !default;
+$nivel-1-lg-text-transform:       none !default;
+
+$nivel-1-lg-font-color:           $headings-color !default;
+$nivel-1-lg-hover-color:          $primary !default;
+$nivel-1-lg-active-color:         $primary !default;
+
+$nivel-1-lg-padding:              rem(8px 0px) !default;
+$nivel-1-lg-first-padding:        rem(0px) !default;
+$nivel-1-lg-last-padding:         rem(0px) !default;
+
+$nivel-1-lg-margin:               rem(0) !default;
+$nivel-1-lg-first-margin:         rem(0) !default;
+$nivel-1-lg-last-margin:          rem(0) !default;
+
+$nivel-1-lg-icon-size:            rem(21px) !default;
+$nivel-1-lg-icon-color:           $primary !default;
+$nivel-1-lg-icon-weight:          bold;
+$nivel-1-lg-icon-margin:          rem(2px 0px 0px 2px) !default;
+
+
+// parametri meniu secundar
+$meniu-secundar-lg-fz:            rem(16px) !default;
+$meniu-secundar-lg-margin:        rem(3px 0px) !default;
+
+
+// parametri nivel 2
+$nivel-2-main-padding:            rem(10px 30px) !default;
+$nivel-2-li-padding:              rem(0px 0px) !default;
+
+$nivel-2-lg-font-size:            rem(18px) !default;
+$nivel-2-lg-font-weight:          bold !default;
+$nivel-2-lg-text-transform:       none !default;
+
+$nivel-2-lg-font-color:           $headings-color !default;
+$nivel-2-lg-font-color-hover:     $primary !default;
+$nivel-2-lg-bg-color:             transparent !default;
+$nivel-2-lg-bg-hover-color:       transparent !default;
+
+$nivel-2-lg-margin:               0 !default;
+$nivel-2-lg-padding:              rem(8px 0px 8px 0px) !default;
+$nivel-2-lg-border-color:         rgba(#000, .06) !default;
+
+$nivel-2-lg-icon-color:           #999 !default;
+$nivel-2-lg-icon-size:            rem(19px) !default;
+$nivel-2-lg-icon-top:             rem(9px) !default;
+$nivel-2-lg-icon-right:           rem(8px) !default;
+
+
+
+// parametri nume categorie
+$nume-categorie-lg-margin:          rem(0px 0px 34px 0px) !default;
+
+$nume-categorie-lg-font-size:       rem(46px) !default;
+$nume-categorie-xl-font-size:       rem(50px) !default;
+$nume-categorie-lg-font-weight:     bold !default;
+$nume-categorie-lg-color:           $headings-color !default;
+$nume-categorie-lg-text-transform:  none !default;
+
+
+
+// extra nav icons
+$extra-nav-lg-margin:             0 !default
+$extra-nav-lg-icon-size:          rem(22px) !default;
+$extra-nav-lg-icon-margins:       0 !default;
+
+$extra-nav-lg-link-color:         #fff !default;
+$extra-nav-lg-link-color-hover:   darken($primary, 15%) !default;
+
+
+
+
+//
+// GENERAL
+// --------------------------------------------------
+.custom-navbar-1 {
+  background-color: #fff;  
+  width: 100%;
+  z-index: 1000;
+
+  .extra-nav-icons {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .seconday-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;    
+  }
+
+  .logo {
+    flex: 1 1 auto;
+  }
+
+  .navbar-brand {
+    margin: 0;
+    padding: 0;
+    width: 84px;
+    font-size: 1rem;
+
+    .st0 {
+      transition: fill 0.25s ease;
+    }
+
+    &:hover .st0 {
+      //fill: darken($primary, 7.5%);
+      fill: $primary;
+    }
+  }
+
+  .seconday-menu {
+    position: relative;
+    
+    &:before {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 3px;
+      overflow: hidden;
+      background-color: $primary;
+    }
+  }
+
+  
+}
+
+
+
+
+
+//
+// MENIU COLAPSABIL
+// --------------------------------------------------
+@include media-breakpoint-down($breakpoint-colaps) {
+  .custom-navbar-1 {
+    height: $inaltime-meniu-devices;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    // BACKDROP
+    #backdrop-meniu {
+      display: none;      
+    }
+
+    // LOGO
+    .logo {
+      text-align: center;
+    }
+
+    // shadow
+    &:after {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      content: "";
+      pointer-events: none;
+      z-index: 1100;
+      transition: all 0.5s ease;
+    }
+    
+    .meniu-activ & {&:after {box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.15);}}
+   
+
+    // NAVBAR PRINCIPAL
+    .navbar-collapse,
+    .dropdown-menu {
+      display: block !important;
+      position: fixed;
+      top: $inaltime-meniu-devices;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: calc(100% - #{$inaltime-meniu-devices});
+      transform: translate(-100%, 0%);
+      transition: transform 0.25s ease-out;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background-color: $fundal-meniu-devices;
+      z-index: 1;
+
+      &.collapsing {
+        display: block !important;
+      }
+
+      &.show {
+        transform: translate(0%, 0%);
+      }
+    }
+
+
+
+
+    // NAVIGARE NIVEL 1
+    .navbar-nav {
+      padding: $navigare-padding;
+      height: calc(100% - #{$extra-nav-height});
+      overflow-x: hidden;
+      overflow-y: auto;
+      
+      @include media-breakpoint-down(xs) {
+        padding: $navigare-padding-xs;
+      }
+
+      > .nav-item > .nav-link {
+        padding: $nivel-1-padding;
+        border-top: 1px solid $nivel-1-border-color;
+        font-family: $nivel-1-font-family;
+        font-size: $nivel-1-font-size;
+        color: $nivel-1-font-color;
+        font-weight: $nivel-1-font-weight;
+        text-transform: $nivel-1-text-transform;
+        text-decoration: none;
+
+        &.dropdown-toggle:after {
+          position: absolute;
+          top: 13px;
+          margin: 0;
+          right: $nivel-1-icon-right;
+          content: "\e145";
+          font-size: $nivel-1-icon-size;
+          color: $nivel-1-icon-color;
+        }
+      }
+
+      > .nav-item:first-child > .nav-link {
+        border-top: none;
+      }
+    }
+
+
+
+
+    // NAVIGARE NIVEL 2
+    .dropdown-menu,
+    .dropdown-submenu {
+      border: none;
+      box-shadow: none;
+    }
+
+    .dropdown-menu {
+      top: 0;
+      height: auto;
+      bottom: $extra-nav-height;
+
+      .dropdown-item {
+        position: relative;        
+        margin: $nivel-2-margin;
+        padding: $nivel-2-padding;
+        border-top: 1px solid $nivel-2-border-color;
+        font-family: $nivel-2-font-family;
+        font-size: $nivel-2-font-size;
+        color: $nivel-2-font-color;
+        font-weight: $nivel-2-font-weight;
+        text-transform: $nivel-2-text-transform;
+        text-decoration: none;
+        background: transparent;
+        width: auto;        
+
+        @include media-breakpoint-down(xs) {
+          margin: $nivel-2-margin-xs;
+        }
+
+        &.dropdown-toggle:after {
+          position: absolute;
+          margin: 0;
+          right: $nivel-2-icon-right;
+          content: $submeniu-dropdown-toggle-icon;
+          font-size: $nivel-2-icon-size;
+          color: $nivel-2-icon-color;
+        }
+      }
+    }
+
+    // corectăm înălțimea sub-submeniuri
+    .dropdown-submenu > .dropdown-menu {
+      bottom: 0;
+    }
+
+
+    // BACK ELEMENT
+    .back-element {
+      position: relative;
+      margin: $back-element-margin;
+      padding: $back-element-padding;
+      font-family: $back-element-font-family;     
+      font-size: $back-element-font-size;
+      color: $back-element-color;
+      font-weight: $back-element-font-weight;
+      text-transform: $back-element-text-transform;
+      line-height: 1;
+      background-color: $back-element-background;
+      border-top: none;
+      border-bottom: 1px solid $back-element-border-color;
+
+      @include media-breakpoint-down(xs) {
+        margin: $back-element-margin-xs;
+        padding: $back-element-padding-xs;
+      }
+
+      &:before {
+        display: inline-block;
+        position: absolute;
+        top: $back-element-icon-top;
+        left: $back-element-icon-left;
+        font-family: "Material Icons";
+        font-size: $back-element-icon-size;
+        content: "\e314";
+        line-height: 1;
+
+        @include media-breakpoint-down(xs) {
+          left: $back-element-icon-left-xs;
+        }              
+      }
+    }
+
+
+
+    // NUME CATEGORIE
+    .nume-categorie {
+      margin: $nume-categorie-margin;
+      font-family: $nume-categorie-font-family;
+      font-size: $nume-categorie-font-size;
+      font-weight: $nume-categorie-font-weight;
+      color: $nume-categorie-color;
+      text-transform: $nume-categorie-text-transform;      
+
+      @include media-breakpoint-down(xs) {
+        margin: $nume-categorie-margin-xs;
+      }
+    }
+
+
+
+    // EXTRA NAV ICONS
+    .extra-nav-icons {           
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: $extra-nav-height;
+      border-top: 1px solid $extra-nav-border-color;
+      background-color: $extra-nav-background;
+      padding: 0 ($grid-gutter-width * 2);
+      align-items: center;
+
+      @include media-breakpoint-down(xs) {
+        padding: 0 ($grid-gutter-width-xs * 2);
+      }
+
+      li {
+        padding: rem(0px 0px 2px 18px);
+        text-align: left;
+
+        &:first-child a {
+          border-left: none;
+        }
+
+        &.description {
+          flex: 1 1 auto;
+          padding-left: 0;
+          font-size: rem(13px);
+          color: #777;
+        }
+      }
+
+      a {
+        display: block;
+        margin: $extra-nav-link-margins;
+        border-left: 1px solid $extra-nav-border-color;
+        width: 100%;
+        color: $extra-nav-link-color;
+        text-decoration: none;
+      }
+
+      i {
+        display: block;
+        margin: $extra-nav-icon-margins;
+        font-size: $extra-nav-icon-size;
+      }
+
+      span {
+        color: $extra-nav-text-color;
+        font-size: $extra-nav-text-size;
+        text-transform: $extra-nav-text-transform;
+        font-weight: $extra-nav-text-weight;
+        line-height: 1;
+      }
+    }
+
+    // MENIU SECUNDAR
+    // ----------------------------
+    .seconday-menu {  
+      margin-top: rem(24px);
+      font-size: $meniu-secundar-fz;
+
+      &:before {
+        margin-bottom: rem(32px);
+      }
+
+      .secondary-link {
+        margin: $meniu-secundar-margin;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+//
+// MENIU LARGE
+// --------------------------------------------------
+@include media-breakpoint-up($breakpoint-extinde) {
+
+  .custom-navbar-1 {
+    height: $inaltime-meniu-large;
+    background-color: $fundal-meniu-large;
+    padding-top: $grid-gutter-width-xl * 2;
+    padding-bottom: 10px;
+
+    @include media-breakpoint-up(xl) {
+      padding-bottom: 0;
+    }
+
+    &:before {
+      display: inline-block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 80px;
+      content: "";
+      overflow: hidden;
+      background-color: $primary;
+    }
+
+
+    // BACKDROP
+    #backdrop-meniu {
+      z-index: -9;
+    }
+
+
+    // LOGO
+    .logo {
+      flex: 1 1 100%;
+    }
+
+    .navbar-brand {
+      margin: 0;
+      padding: 0;
+      width: 174px;
+    }
+
+
+    // NAVIGARE NIVEL 1
+    .navbar-nav {
+      flex-direction: column;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 80px;
+      background-color: #fff;
+      transform: translateX(-100%);
+      transition: transform 0.25s ease-out;
+      z-index: -1;
+      padding: $navigare-padding;
+
+      @include media-breakpoint-up(xl) {
+        padding: 20px $grid-gutter-width-xl * 2;
+      }
+
+      .meniu-activ & {
+        transform: translateX(0);
+        -webkit-transform: translateZ(0); // fix chrome bug
+      }
+
+      > .nav-item > .nav-link {
+        margin: $nivel-1-lg-margin;
+        padding: $nivel-1-lg-padding;
+        font-family: $nivel-1-font-family;
+        font-size: $nivel-1-lg-font-size;
+        color: $nivel-1-lg-font-color;
+        font-weight: $nivel-1-lg-font-weight;
+        text-transform: $nivel-1-lg-text-transform;
+        text-decoration: none;
+        transition: all 0.35s ease;
+        min-width: 180px;
+
+        @include media-breakpoint-up(xl) {
+          font-size: rem(24px);
+          padding: rem(12px 0px);
+        }
+
+        &.dropdown-toggle:after {
+          display: inline-block;
+          position: absolute;
+          right: 8px;
+          top: 11px;
+          margin: $nivel-1-lg-icon-margin;
+          font-size: $nivel-1-lg-icon-size;
+          font-weight: $nivel-1-lg-icon-weight;
+          color: $nivel-1-lg-icon-color;
+          vertical-align: top;
+          transition: all 0.35s ease;
+          content: "\e145";
+
+          @include media-breakpoint-up(xl) {
+            font-size: rem(25px);
+            top: 14px;
+          }
+        }
+
+        &:hover {
+          color: $nivel-1-lg-hover-color;
+
+          &.dropdown-toggle:after {
+            color: $nivel-1-lg-hover-color
+          }
+        }
+      }
+
+      > .nav-item:first-child > .nav-link {
+        margin-left: $nivel-1-lg-first-margin;
+        padding-left: $nivel-1-lg-first-padding;
+      }
+
+      > .nav-item:last-child > .nav-link {
+        margin-right: $nivel-1-lg-last-margin;
+        padding-right: $nivel-1-lg-last-padding;
+      }
+
+      > .nav-item.active > .nav-link {
+        color: $nivel-1-lg-active-color;
+
+        &.dropdown-toggle:after {
+          color: $nivel-1-lg-hover-color
+        }
+      }
+    }
+
+
+
+    // NIVEL 1 HOVER CHILD
+    .navbar-nav > .nav-item.dropdown:hover > .nav-link {
+      color: $nivel-1-lg-hover-color;
+
+      &:after {
+        color: $nivel-1-lg-hover-color
+      }
+    }
+
+
+    
+    // NIVEL 2 CONTAINER
+    .dropdown-menu {
+      padding: $nivel-2-main-padding;
+
+      li {
+        padding: $nivel-2-li-padding;
+      }
+    }
+    
+
+    // NAVIGARE NIVEL 2
+    .dropdown-item {
+      position: relative;
+      margin: $nivel-2-lg-margin;
+      padding: $nivel-2-lg-padding;
+      font-size: $nivel-2-lg-font-size;
+      color: $nivel-2-lg-font-color;
+      font-weight: $nivel-2-lg-font-weight;
+      text-transform: $nivel-2-lg-text-transform;
+      //border-top: 1px solid $nivel-2-lg-border-color;
+      background-color: $nivel-2-lg-bg-color;
+      transition: all 0.35s ease;
+
+      &:hover {
+        color: $nivel-2-lg-font-color-hover;
+        background-color: $nivel-2-lg-bg-hover-color;
+      }
+
+      &.dropdown-toggle:after {
+        position: absolute;
+        top: $nivel-2-lg-icon-top;
+        right: $nivel-2-lg-icon-right;
+        content: $submeniu-dropdown-toggle-icon;
+        font-size: $nivel-2-lg-icon-size;
+        color: $nivel-2-lg-icon-color;
+        transition: all 0.35s ease;
+      }
+      
+      &.dropdown-toggle:hover:after {
+        color: $nivel-2-lg-font-color-hover;
+      }      
+    }
+
+    .dropdown > .dropdown-menu > li:nth-child(3) > .dropdown-item {
+      border: none;
+    }
+
+
+
+    // NIVEL 2 HOVER CHILD
+    .dropdown-submenu:hover .dropdown-item.dropdown-toggle {
+      color: $nivel-2-lg-font-color-hover;
+      background-color: $nivel-2-lg-bg-hover-color;
+
+      &:after {
+        color: $nivel-2-lg-font-color-hover;
+      }
+    }
+
+
+
+    // NUME CATEGORIE
+    .navbar-nav > .nav-item > .dropdown-menu > .nume-categorie {
+      //display: none;      // ascundem primul nivel, e bun doar pt mobil
+    }
+
+
+    // nou
+    .nav-item > .dropdown-menu {
+      position: fixed;
+      display: flex;
+      height: 100%;      
+      flex-direction: column;
+      justify-content: center;
+      visibility: hidden;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 240px;
+      width: calc(100vw - 320px);
+      background-color: $light-1;
+      box-shadow: none;
+      opacity: 0;
+      transition: opacity 0.25s ease, visibility 0s ease 0.25s;
+      overflow-y: auto;      
+
+      @include media-breakpoint-up(xl) {
+        left: 280px;
+        width: calc(100vw - 360px);
+      }
+
+      &.show {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.25s ease, visibility 0s ease;        
+      }
+
+      > li {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: 926px;
+      }
+    }
+
+    // NUME SUBCATEGORIE
+    .nume-categorie {
+      margin: $nume-categorie-lg-margin;
+      font-family: $nume-categorie-font-family;
+      font-size: $nume-categorie-lg-font-size;
+      font-weight: $nume-categorie-lg-font-weight;
+      color: $nume-categorie-lg-color;
+      text-transform: $nume-categorie-lg-text-transform;
+      white-space: nowrap;
+
+      @include media-breakpoint-up(xl) {
+        font-size: $nume-categorie-xl-font-size;
+      }
+    }
+
+
+    // BACK ELEMENT
+    .back-element {
+      display: none;      
+    }
+
+
+
+    .block-submenu {      
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+    }
+
+
+
+    // EXTRA NAV ICONS
+    .extra-nav-icons {
+      margin: $extra-nav-lg-margin;
+      position: fixed;
+      left: 0;
+      bottom: 106px;
+      flex-direction: column;
+
+      li {
+        padding: 9px 0px;
+        width: 80px;
+        text-align: center;
+      }
+
+      .description {display: none;}
+
+      a {
+        color: $extra-nav-lg-link-color;
+        text-decoration: none;
+        transition: color 0.35s ease;
+
+        &:hover {
+          color: $extra-nav-lg-link-color-hover;
+        }
+      }
+
+      i {
+        display: block;
+        margin: $extra-nav-lg-icon-margins;
+        font-size: $extra-nav-lg-icon-size;
+      }
+
+      span {
+        display: none;        
+      }
+    }
+
+
+    // logo
+    .logo, .buton-search-menu {
+      z-index: -10;
+    }
+
+
+    // NAVIGARE SECUNDARĂ
+    .seconday-menu {
+      margin-top: 27px;
+      display: flex;
+      flex-direction: column;
+      @include media-breakpoint-up(xl) {margin-top: 33px;}
+
+      &:before {
+        margin-bottom: 30px;
+        @include media-breakpoint-up(xl) {margin-bottom: 42px;}
+      }
+
+      a {
+        display: block; 
+        padding: rem(6px 0px);       
+      }
+    }
+
+
+  }
+}
+
+
+
+
+//
+// BUTON MENIU
+// --------------------------------------------------
+.buton-meniu,
+.buton-close-mare {
+  position: relative;
+  border: none;
+  outline: none !important;
+  display: inline-block !important;
+  padding: 5px 0px 5px 0px;
+  margin: 0;
+  background-color: transparent;
+  vertical-align: top;
+  cursor: pointer;  
+
+  span {
+    margin: 3px 0px;
+    display: block;
+    width: 18px;
+    height: 2px;
+    overflow: hidden;
+    background-color: #000;
+    transition: all 0.25s ease;
+
+    &:nth-of-type(3) {
+      background-color: transparent;
+    }
+  }
+
+  em {
+    display: block;
+    margin: 4px 9px 0px 0px;
+    float: left;
+    font-size: 12px;
+    font-style: normal;
+    color: #333;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  em:not(*:root) {// Chrome Fix
+    margin-top: 5px;
+  }
+
+  &.meniu-activ {
+    span:nth-of-type(2) {
+      background-color: $primary;
+      transform: translate(2px, 5px) rotate(45deg);
+    }
+
+    span:nth-of-type(4) {
+      background-color: $primary;
+      transform: translate(2px, -5px) rotate(-45deg);
+    }
+  }
+
+
+  @include media-breakpoint-down($breakpoint-colaps) {
+    &.navbar-toggler {
+      padding: 5px 10px 5px 10px;
+      margin-left: -10px;
+    }    
+  }
+
+
+  @include media-breakpoint-up($breakpoint-extinde) {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all 0.25s ease;
+
+    span {margin: 3px auto;}
+
+    &:hover{
+      background-color: $extra-nav-lg-link-color-hover;
+
+      span:nth-of-type(2), span:nth-of-type(4) {
+        background-color: #fff;
+      }
+    }
+
+    &.meniu-activ {
+      span:nth-of-type(2) {
+        transform: translate(0px, 5px) rotate(45deg);
+      }
+      span:nth-of-type(4) {
+        transform: translate(0px, -5px) rotate(-45deg);
+      }
+    }
+  }
+}
+
+
+
+
+//
+// BUTON SEARCH
+// --------------------------------------------------
+.buton-search-menu {
+  position: relative;
+  border: none;  
+  outline: none;
+
+  &:focus {outline: none;}
+
+
+  // devices
+  @include media-breakpoint-down($breakpoint-colaps) {
+    margin: 0 -4px 0 0;
+    padding: 0px 6px 0px 12px;
+    background-color: transparent;
+
+    svg {width: 15px; height: 15px; margin-top: -2px;}
+    path {fill: $primary;}
+  }
+
+  // large
+  @include media-breakpoint-up($breakpoint-extinde) {
+    margin: 0;
+    padding: 0px 6px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $primary;
+    transition: all 0.25s ease;
+
+    svg {width: 17px; height: 17px; margin: -2px 0px 0px 1px;}
+
+    &:hover {background-color: darken($primary, 7.5%);}
+  }
+}
+
+
+
+
+//
+// BUTON GO TOP
+// --------------------------------------------------
+.buton-go-top {
+  display: none;
+  
+  @include media-breakpoint-up($breakpoint-extinde) {
+    display: flex;
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    width: 50px;
+    height: 50px;
+    border: none;    
+    border-radius: 50%;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+
+    svg {width: 15px; height: 15px; margin-top: -2px;}
+    svg path {transition: fill 0.25s ease;}
+
+    &:hover {
+      background-color: $extra-nav-lg-link-color-hover;
+      svg path {fill: #fff;}
+    }    
+  }
+}
+
+
+
+
+
+//
+// NAV CONTAINER
+// --------------------------------------------------
+.nav-container {
+  z-index: $zindex-dropdown;
+
+  .navbar {
+    @extend .container-fluid;
+  }
+
+  
+  // PE MOBIL
+  @include media-breakpoint-down($breakpoint-colaps) {
+
+    height: $inaltime-meniu-devices + 3px;
+    position: sticky;
+    top: -3px;
+    -webkit-backface-visibility: hidden;
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      height: 3px;
+      position: sticky;
+    }
+
+    &:before {
+      top: $inaltime-meniu-devices - 3px;
+      box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.4);
+    }
+
+    &:after {
+      background: #fff;
+      top: 0;
+      z-index: 2;
+    }
+
+    .navbar {
+      margin-top: -3px;
+    }
+  }
+}

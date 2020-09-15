@@ -1,0 +1,59 @@
+//
+// DISPLAY GRID FOR LIST
+// --------------------------------------------------
+@mixin display-grid-article($image-width) {
+	padding: 0;
+	display: grid;
+	align-items: start;
+	grid-template-columns: $image-width auto;
+	grid-template-rows: auto auto 1fr;
+	grid-template-areas:
+		"image the-title"
+		"image the-text"
+		"image the-tags";
+
+
+	.article-image {
+		grid-row: span 3;
+		grid-area: image;
+	}
+
+
+	h1, h2, h3, h4, h5, h6 {
+		grid-area: the-title;
+	}
+
+	.preview {
+		grid-area: the-text;
+	}
+
+	.tags-text {
+		grid-area: the-tags;
+	}
+}
+
+
+
+
+//
+// PADDINGS IN DISPLAY GRID FOR LIST
+// --------------------------------------------------
+@mixin display-grid-paddings($padding-size) {
+	h1, h2, h3, h4, h5, h6, .article-image, .preview, .tags-text {
+		padding: 0 $padding-size;
+	}
+}
+
+
+
+
+//
+// ARTYCLE TYPE ICON SIZE & POSITION
+// --------------------------------------------------
+@mixin icon-type-sizes-positions($sz-xs:null, $pos-xs:null, $sz-sm:null, $pos-sm:null, $sz-md:null, $pos-md:null, $sz-lg:null, $pos-lg:null, $sz-xl:null, $pos-xl:null) {
+	width: $sz-xs;	height: $sz-xs;	bottom: $pos-xs;	left: $pos-xs;
+	@include media-breakpoint-up(sm) {width: $sz-sm;	height: $sz-sm;	bottom: $pos-sm;	left: $pos-sm;}
+	@include media-breakpoint-up(md) {width: $sz-md;	height: $sz-md;	bottom: $pos-md;	left: $pos-md;}
+	@include media-breakpoint-up(lg) {width: $sz-lg;	height: $sz-lg;	bottom: $pos-lg;	left: $pos-lg;}
+	@include media-breakpoint-up(xl) {width: $sz-xl;	height: $sz-xl;	bottom: $pos-xl;	left: $pos-xl;}
+}

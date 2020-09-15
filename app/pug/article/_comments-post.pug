@@ -1,0 +1,41 @@
+//- COMMENTS
+mixin commentsPost(logged, postingComment)
+	
+	.comment-post(class!=attributes.class)
+
+		if(postingComment == true)
+			img.user-photo(src='images/icons/user.svg', alt='')
+
+		form.user-utils
+
+			if(postingComment == true)
+				textarea.form-control(rows=3, placeholder='Comentează și tu...')
+
+			.user-auth
+
+				if(logged == true)
+					.btn.btn-primary Postează
+
+				else
+
+					span Autentifică-te cu:
+
+					button.social-login.facebook
+						i.icon-facebook
+
+					button.social-login.google
+						i.icon-google
+
+					button.social-login.twitter
+						i.icon-twitter
+
+					button.social-login.email
+						i.material-icons email
+
+				
+
+		
+						
+		
+	
+

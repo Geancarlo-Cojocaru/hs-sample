@@ -1,0 +1,69 @@
+@mixin caret-down {
+  font-family: "Material Icons";
+  font-size: rem(17px);
+  content: "\e313";
+  line-height: 1;
+  vertical-align: -0.25rem;
+  width: 0.875rem;
+}
+
+@mixin caret-up {
+  font-family: "Material Icons";
+  font-size: rem(17px);
+  content: "\e316";
+  line-height: 1;
+  vertical-align: -0.25rem;
+  width: 0.875rem;
+}
+
+@mixin caret-right {
+  font-family: "Material Icons";
+  font-size: rem(17px);
+  content: "\e315";
+  line-height: 1;
+  vertical-align: -0.25rem;
+}
+
+@mixin caret-left {
+  font-family: "Material Icons";
+  font-size: rem(17px);
+  content: "\e314";
+  line-height: 1;
+  vertical-align: -0.25rem;
+}
+
+@mixin caret($direction: down) {
+  @if $enable-caret {
+    &::after {
+      display: inline-block;
+      margin-left: $caret-spacing;
+      vertical-align: $caret-vertical-align;
+      content: "";
+      @if $direction == down {
+        @include caret-down;
+      } @else if $direction == up {
+        @include caret-up;
+      } @else if $direction == right {
+        @include caret-right;
+      }
+    }
+
+    @if $direction == left {
+      &::after {
+        display: none;
+      }
+
+      &::before {
+        display: inline-block;
+        margin-right: $caret-spacing;
+        vertical-align: $caret-vertical-align;
+        content: "";
+        @include caret-left;
+      }
+    }
+
+    &:empty::after {
+      margin-left: 0;
+    }
+  }
+}

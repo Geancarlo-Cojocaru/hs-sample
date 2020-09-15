@@ -1,0 +1,148 @@
+//-
+	Se apelează mixinul cu
+	+article(array)
+
+	'noImage' este parametrul pe care îl avem pentru a verifica dacă elementul are sau nu imagine asociată; nu e necesar la apelarea mixinului
+
+	Se poate renunța la imagini cu (noImageArticle='no-image'), de ex
+	+article(array)(noImageArticle='no-image')
+
+	'article.typeClass' este o pereche cheie/valoare care ne permite să agregăm în aceiași listă diferite tipuri sau categorii de articole non-default, de exemplu la AmCham app agregam stiri, articole, meetings în aceiași listă
+
+	Se poate determina modul de afișare al articolelor default cu (listTypeClass='tip-articol'), de ex
+	+article(array)(listTypeClass='small-article')
+
+	Valorile pentru 'article.typeClass' sau 'listTypeClass' sunt:
+	'featured-article', 'big-article', 'small-article', 'mini-article'
+
+	'article.categoryType' este o pereche cheie/valoare care ne permite să afișăm iconițe pentru articolele multimedia. Valorile sunt 'is-video' și 'is-gallery'
+
+	Pt. imagini folosim srcset ca să nu servim imagini mari unde nu e nevoie, de ex nu e ok să servești o imagine de 1200px pe mobil.
+
+	Dacă vrem să suprascriem tipul de imagine folosim (imageTypeClass='tip-articol') de ex
+	+article(array)(imageTypeClass='big-article')
+
+	Mărimile imaginilor pt. proiectul de față sunt: imageFeaturedArticle: 926px; imageBigArticle: 560px; image: 438px; imageSmallArticle: 266px; imageMiniArticle: 160px;
+
+	Dacă vrem să suprascriem tipul de heading din titlu (titleTypeClass='tip-articol') de ex
+	+article(array)(titleTypeClass='big-article')
+
+	Se poate stabili lungimea textului preview cu (previewTextLength='lungime'), de ex
+	+article(array)(previewTextLength='120')
+
+	
+
+
+mixin article(article, noImage)
+
+	//- verificator pt date constructor
+	if(article === undefined || article.length == 0)
+		p no data for build
+	
+
+	//- constructor
+	else
+
+
+		//- verificăm dacă avem imagini;
+		if (!article.image)
+			-noImage = 'no-image'
+		else
+			-noImage = ''
+
+
+		//- articol
+		article.list(class=[attributes.listTypeClass || article.typeClass, article.devClass, noImage || attributes.noImageArticle].filter(Boolean).join(' '))
+
+			//- dacă nu avem imagini
+			if (!article.image)
+
+			//- dacă nu vrem imagini
+			else if (attributes.noImageArticle == 'no-image')
+
+			//- dacă vrem imagini					
+			else
+				.article-image
+					.imagine-fit.format-16-9.animat-elemente(class=article.imageFitType)
+						a.poza(href=article.link)
+
+							//- marimea imaginilor pt. fiecare tip de articol								
+									avem nevoie de srcset ca să nu servim imagini mari unde nu e nevoie, de ex mobil
+							if (attributes.imageTypeClass=='featured-article' || attributes.listTypeClass=='featured-article' || article.typeClass=='featured-article')
+								- var isrcset = article.image + " 438w," + article.imageFeaturedArticle + " 926w,"
+								- var isizes = "(max-width: 420px) 420px, 926px"
+
+							else if (attributes.imageTypeClass=='big-article' || attributes.listTypeClass=='big-article' || article.typeClass=='big-article')
+								- var isrcset = article.image + " 438w," + article.imageBigArticle + " 560w,"
+								- var isizes = "(max-width: 420px) 420px, 560px"
+
+							else if (attributes.imageTypeClass=='mini-article' || attributes.listTypeClass=='mini-article' || article.typeClass=='mini-article')
+								- var isrcset = article.imageMiniArticle + " 160w," + article.imageSmallArticle + " 266w,"
+								- var isizes = "(max-width: 420px) 160px, 266px"
+
+							else
+								- var isrcset = article.imageMiniArticle + " 160w," + article.image + " 438w,"
+								- var isizes = "(max-width: 420px) 160px, 438px"
+
+							img(data-object-fit=article.imageFitType || "cover", alt="", src=article.image, srcset=isrcset, sizes=isizes)
+
+							.element-animat
+								i.material-icons arrow_forward
+
+							
+							//- tipul de detaliu articol, de ex video sau foto
+									în aceste cazuri clasele css vor fi: icon-video, icon-gallery
+							if (article.categoryType === 'is-video')
+								span(class='icon-video')
+							else if (article.categoryType === 'is-gallery')
+								span(class='icon-gallery')
+
+
+			//-  HEADING TYPES
+			//-  principal
+			if (attributes.titleTypeClass=='featured-article' || attributes.listTypeClass=='featured-article' || article.typeClass=='featured-article')
+				h1
+					a.link-title(href=article.link)= article.title
+
+			//- mare
+			else if (attributes.titleTypeClass=='big-article' || attributes.listTypeClass=='big-article' || article.typeClass=='big-article')
+				h2
+					a.link-title(href=article.link)= article.title
+
+			//- mic
+			else if (attributes.titleTypeClass=='small-article' || attributes.listTypeClass=='small-article' || article.typeClass=='small-article')
+				h4
+					a.link-title(href=article.link)= article.title
+
+			//- mini
+			else if (attributes.titleTypeClass=='mini-article' || attributes.listTypeClass=='mini-article' || article.typeClass=='mini-article')
+				h5
+					a.link-title(href=article.link)= article.title
+
+			//- normal
+			else
+				h3
+					a.link-title(href=article.link)= article.title
+			//- END HEADING TYPES
+
+
+			//- text; în proiectul de față, dacă e articol mic sau mini scoatem textul preview
+			if (article.typeClass=='small-article' || article.typeClass=='mini-article' || attributes.listTypeClass=='small-article' || attributes.listTypeClass=='mini-article')
+
+			else
+				
+				//- dacă vrem să trunchiem textul; trunchiem frumos, 'la cuvânt' în loc de 'la literă'
+				if(attributes.previewTextLength && article.previewText.length >= attributes.previewTextLength)
+					-
+						var trimmedString = article.previewText.substr(0, attributes.previewTextLength)
+						trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(' ')))
+
+					.preview= trimmedString + ' ...'
+
+				else
+					.preview= article.previewText
+
+			
+			//- tags
+			include _tags.pug
+			+tagList(article.tagsList)

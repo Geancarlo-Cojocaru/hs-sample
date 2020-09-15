@@ -1,0 +1,20 @@
+include ../article/_tags.pug
+
+//- MENU TAGS
+//-=========================================================================
+mixin menuTags(array)
+
+	each blocElement in array
+		form.menu-tags
+			.bloc-submenu-name= blocElement.categoryName
+		
+			.bloc-list
+				//- more blocs
+				each blocCategory in blocElement.blocSubmenu
+					.bloc-element
+						if (blocCategory.hasOwnProperty('blocName'))
+							.bloc-name= blocCategory.blocName
+							+tagList(blocCategory.tagsList, 'tags-checkbox')
+
+			.buton-jos
+				button.btn.btn-lg.btn-primary(type="button") Vezi subiecte

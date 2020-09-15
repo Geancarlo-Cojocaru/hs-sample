@@ -1,0 +1,136 @@
+//
+// TYPES
+// order in "element-*-*" mixins for media queries: xs, sm, md, lg, xl;
+// --------------------------------------------------
+article.list {
+
+
+	// STANDARD ARTICLE
+	// --------------------------------------------------
+	@include media-breakpoint-down(xs) {
+
+		.article-image {
+			width: calc(50% + #{$grid-gutter-width-xs});
+			float: left;
+			padding-right: $grid-gutter-width-xs * 2;
+			margin-bottom: $grid-gutter-width-xs;
+		}
+
+		&:before {
+			margin-bottom: $grid-gutter-width-xs * 2 + 4px;
+			display: block;		
+			content: "";
+			height: 1px;
+			width: 100%;
+			background-color: $light-2;
+		}
+
+		&:first-child:before {
+			display: none;			
+		}
+	}
+
+
+
+	// FEATURED ARTICLE
+	// --------------------------------------------------
+	&.featured-article {
+
+		@include media-breakpoint-down(xs) {
+			.article-image {
+				margin-left: -$grid-gutter-width-xs * 2;
+				margin-right: -$grid-gutter-width-xs * 2;
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+			@include display-grid-article(66.66667%);
+			@include display-grid-paddings($grid-gutter-width);		
+		}
+
+		.preview {			
+			@include element-top-margins ($mt-xs: 20px, $mt-lg: 33px);
+			@include element-font-sizes ($fz-md: 16px);
+		}
+
+		.tags-text {
+			@include element-top-margins ($mt-xs: 16px, $mt-md: 20px, $mt-lg: 28px);
+		}
+	}
+
+
+
+	// BIG ARTICLE
+	// --------------------------------------------------
+	&.big-article {
+
+		@include media-breakpoint-up(sm) {
+			@include display-grid-article(55.55555%);
+			@include display-grid-paddings($grid-gutter-width);
+		}
+
+		.preview {
+			@include element-top-margins($mt-xs: 17px, $mt-lg: 22px);
+		}
+
+		.tags-text {
+			@include element-top-margins ($mt-xs: 13px, $mt-sm: 18px, $mt-lg: 22px);
+		}
+	}
+
+
+
+	// DISPLAY GRID: COMMMON FOR FEAURED & BIG;
+	// --------------------------------------------------
+	&.featured-article,	&.big-article {		
+		width: 100%;
+		max-width: 100%;	
+
+		@include media-breakpoint-up(xl) {
+			@include display-grid-paddings($grid-gutter-width-xl);
+		}
+	}
+
+
+
+	// SMALL ARTICLE
+	// --------------------------------------------------
+	&.small-article {
+
+		.tags-text {
+			@include element-top-margins ($mt-lg: 16px);
+		}		
+	}
+	
+
+
+	// COMMON FOR MINI & SMALL ARTICLE
+	// --------------------------------------------------
+	&.small-article, &.mini-article {
+
+		@include media-breakpoint-down(xs) {
+			@include display-grid-article(33.33333%);
+			@include display-grid-paddings($grid-gutter-width-xs);
+		}
+
+		.tags-text {
+			@include element-top-margins ($mt-xs: 14px);
+		}
+	}
+
+
+	// NO IMAGE ARTICLE
+	// --------------------------------------------------
+	&.no-image {
+		display: block;
+		
+		h1, h2, h3, h4, h5, h6 {margin-top: 0;}
+	}
+}
+
+
+
+// Special pt. părinte ELEM
+[class*="elem-"] > article.list {
+	&.featured-article,	&.big-article {flex: 1 1 100%;}	
+}

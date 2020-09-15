@@ -1,0 +1,15 @@
+//- ABONARE
+//-=========================================================================
+mixin abonareNewsletter
+
+	section(class!=attributes.class)
+
+		.row.justify-content-sm-center
+			.col-md-9.col-lg-6.text-sm-center.full-spacing
+				h3 Abonare newsletter
+				p.small.text-dark Primiți cele mai noi articole direct în căsuța dvs. de email
+
+				// form 
+				form.form-newsletter
+					input.input-newsletter(type="text")
+					button.btn.btn-lg.btn-primary.btn-newsletter(type="submit") Trimite

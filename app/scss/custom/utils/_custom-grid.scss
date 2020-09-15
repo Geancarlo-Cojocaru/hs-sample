@@ -1,0 +1,64 @@
+// Variables
+$enable-custom-grid:            true;
+$custom-columns:                6;
+
+
+@mixin make-elements($size, $columns: $custom-columns) {
+  flex: 0 0 percentage($size / $columns);
+  max-width: percentage($size / $columns);
+}
+
+
+// Mixin
+@mixin make-custom-grid($columns: $custom-columns, $breakpoints: $grid-breakpoints) {
+
+  // Common properties for all breakpoints
+  %custom-column {
+    position: relative;
+    width: 100%;
+    padding-right: $grid-gutter-width;
+    padding-left: $grid-gutter-width;
+
+    @include media-breakpoint-down(xs) {
+      padding-right: $grid-gutter-width-xs;
+      padding-left: $grid-gutter-width-xs;
+    }
+
+    @include media-breakpoint-up(xl) {
+      padding-right: $grid-gutter-width-xl;
+      padding-left: $grid-gutter-width-xl;
+    }
+  }
+
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    // Allow elements to stretch full width below their breakpoints
+    @for $i from 1 through $columns {
+      .elem#{$infix}-#{$i} > * {
+        @extend %custom-column;
+      }
+    }
+
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      @for $i from 1 through $columns {
+        .elem#{$infix}-#{$i} > * {
+          flex: 0 0 percentage($columns / ($columns * $i));
+          max-width: percentage($columns / ($columns * $i));
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+// Generator
+@if $enable-custom-grid {
+  @include make-custom-grid();
+}

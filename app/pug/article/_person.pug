@@ -1,0 +1,45 @@
+//-
+//- PERSON
+//- --------------------------------------------------
+mixin person(person)
+
+	//- verificator pt date constructor
+	if(person === undefined || person.length == 0)
+		p no data for person build
+
+	else
+		.person(class=attributes.class, typeClass=attributes.typeClass)
+
+			//- dacă avem link
+			if(person.personLink)
+				a.person-link(href=person.personLink)
+					span= person.personName
+
+			//- person photo
+			if (attributes.typeClass=='no-photo')
+
+			else
+				img(src=person.personPhoto || 'images/icons/user.svg', alt='')
+
+			//- person name
+			.person-name
+				strong= person.personName
+				small= person.personDescription		
+
+
+
+
+
+//-
+//- PERSON LIST
+//- --------------------------------------------------
+mixin personList(array)
+
+	//- IF THERE ARE NO PERSONS
+	if(array === undefined || array.length == 0)
+		.col Lista de persoane este goală!	
+
+	//- IF TERE ARE PERSONS
+	else
+		each person in array
+			+person(person)(class=[attributes.class, person.devClass, attributes.typeClass].filter(Boolean).join(' '))

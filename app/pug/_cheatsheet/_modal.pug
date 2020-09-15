@@ -1,0 +1,119 @@
+//- Modal
+//-=========================================================================
+include ../navigation/_menu-data-json.pug
+include ../article/_tags.pug
+
+-
+  var subiecteCautare = [{tagValue: 'fotbal'},{tagValue: 'antrenori'},{tagValue: 'național'},{tagValue: 'goluri'},{tagValue: 'cluburi'},{tagValue: 'jucători'},{tagValue: 'premier league'},{tagValue: 'bundesliga'},{tagValue: 'primera division'}]
+
+
+h1.cheatsheet Modal
+p.cheatsheet modal sizes
+
+
+
+// Button trigger modal normal 
+button.btn.btn-primary(type="button", data-toggle="modal", data-target="#exampleModal-01") Modal normal
+
+// Modal normal 
+#exampleModal-01.modal.fade(tabindex="-1", role="dialog", aria-labelledby="exampleModalLabel", aria-hidden="true")
+  .modal-dialog(role="document")
+    .modal-content
+      .modal-header
+        h5#exampleModalLabel.modal-title Modal title
+        button.close(type="button", data-dismiss="modal", aria-label="Close")
+          span(aria-hidden="true") ×
+      .modal-body
+        | ...
+      .modal-footer
+        button.btn.btn-sm.btn-outline-light(type="button", data-dismiss="modal") Close
+        button.btn.btn-sm.btn-primary(type="button") Save changes
+
+
+
+// Button trigger modal large 
+button.btn.btn-primary(type="button", data-toggle="modal", data-target="#exampleModal-02") Modal large
+
+// Modal large 
+#exampleModal-02.modal.fade.bd-example-modal-lg(tabindex="-1", role="dialog", aria-labelledby="exampleModalLabel", aria-hidden="true")
+  .modal-dialog.modal-lg(role="document")
+    .modal-content
+      .modal-header
+        h5#exampleModalLabel.modal-title Modal title
+        button.close(type="button", data-dismiss="modal", aria-label="Close")
+          span(aria-hidden="true") ×
+      .modal-body
+        | ...
+      .modal-footer
+        button.btn.btn-outline-light(type="button", data-dismiss="modal") Close
+        button.btn.btn-primary(type="button") Save changes
+
+
+
+// Button trigger modal small 
+button.btn.btn-primary(type="button", data-toggle="modal", data-target="#exampleModal-03") Modal small
+
+// Modal small 
+#exampleModal-03.modal.fade.bd-example-modal-sm(tabindex="-1", role="dialog", aria-labelledby="exampleModalLabel", aria-hidden="true")
+  .modal-dialog.modal-sm(role="document")
+    .modal-content
+      .modal-header
+        h5#exampleModalLabel.modal-title Modal title
+        button.close(type="button", data-dismiss="modal", aria-label="Close")
+          span(aria-hidden="true") ×
+      .modal-body
+        | ...
+      .modal-footer
+        button.btn.btn-sm.btn-outline-light(type="button", data-dismiss="modal") Close
+        button.btn.btn-sm.btn-primary(type="button") Save changes
+
+
+// Button trigger modal full screen 
+button.btn.btn-primary(type="button", data-toggle="modal", data-target="#modal-subiecte", data-backdrop="false") Modal subiecte
+
+// Modal large 
+#modal-subiecte.modal.fade.bd-example-modal-full(tabindex="-1", role="dialog", aria-labelledby="exampleModalLabel", aria-hidden="true")
+  .modal-dialog.modal-full(role="document")
+    .modal-content
+      
+      // buton close 
+      button.buton-close-mare(type="button", data-dismiss="modal", aria-label="Close")
+        span.sr-only Închide
+        span
+        span
+        span
+        
+      // continut 
+      .modal-body
+        +menuTags(menuTags)
+
+
+// Button trigger modal full screen 
+button.btn.btn-primary(type="button", data-toggle="modal", data-target="#modal-cautare", data-backdrop="false") Modal căutare
+
+// Modal large 
+#modal-cautare.modal.fade.bd-example-modal-full(tabindex="-1", role="dialog", aria-labelledby="exampleModalLabel", aria-hidden="true")
+  .modal-dialog.modal-full(role="document")
+    .modal-content
+      
+      // buton close 
+      button.buton-close-mare(type="button", data-dismiss="modal", aria-label="Close")
+        span.sr-only Închide
+        span
+        span
+        span
+        
+      // continut 
+      .modal-body
+        .menu-tags
+          .bloc-submenu-name Căutare
+          p Introduceți termenii căutării dvs. și apăsați 'Enter'
+
+          form.form-cautare
+            input.input-cautare(type='text')
+            button.btn-cautare(type='submit')
+              include ../navigation/_svg/search.pug
+
+          .bloc-element
+            .bloc-name Subiecte populare
+            +tagList(subiecteCautare, 'tags-button')(class='no-icon')

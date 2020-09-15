@@ -1,0 +1,44 @@
+//- Dropdown
+//-=========================================================================
+
+h1.cheatsheet Dropdown
+.row
+
+
+	.col-xl-4
+		p.cheatsheet button dropdown, animat (+ clasa 'animat')
+
+		// button dropdown
+		.dropdown.animat
+			button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle(type="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
+				| Dropdown button
+			.dropdown-menu(aria-labelledby="dropdownMenuButton")
+				a.dropdown-item(href="#") #[i.material-icons favorite] Action
+				a.dropdown-item(href="#") #[i.material-icons favorite_border] Another action
+				a.dropdown-item(href="#") #[i.material-icons not_interested] Something else here
+
+
+	.col-xl-4
+		p.cheatsheet link dropdown, animat (+ clasa 'animat')
+
+		// link dropdown
+		.dropdown.animat
+			a#dropdownMenuLink.btn.btn-secondary.dropdown-toggle(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
+				| Dropdown link
+			.dropdown-menu(aria-labelledby="dropdownMenuLink")
+				a.dropdown-item(href="#") Action
+				a.dropdown-item(href="#") Another action
+				a.dropdown-item(href="#") Something else here
+		
+
+	.col-xl-4
+		p.cheatsheet dropdown right, neanimat
+
+		// dropdown right
+		.dropdown
+			button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle(type="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
+				| This dropdown is right-aligned
+			.dropdown-menu.dropdown-menu-right(aria-labelledby="dropdownMenuButton")
+				a.dropdown-item(href="#") Action
+				a.dropdown-item(href="#") Another action
+				a.dropdown-item(href="#") Something else here

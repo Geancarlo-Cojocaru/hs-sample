@@ -1,0 +1,42 @@
+//- TABS
+//-=========================================================================
+
+h1.cheatsheet Tabs
+.row
+
+
+	.col-xl-6
+		p.cheatsheet tabs normal
+		// tabs normal 
+
+		ul#tabs-01.nav.nav-tabs(role="tablist")
+			li.nav-item
+				a.nav-link.active(href="#tab-01", data-toggle="tab", role="tab", aria-controls="nav-tab-01", aria-selected="true") Tab 01
+			li.nav-item
+				a.nav-link(href="#tab-02", data-toggle="tab", role="tab", aria-controls="nav-tab-02", aria-selected="false") Tab 02
+			li.nav-item
+				a.nav-link(href="#tab-03", data-toggle="tab", role="tab", aria-controls="nav-tab-03", aria-selected="false") Tab 03
+
+		#tabsContent-01.tab-content
+			#tab-01.tab-pane.fade.show.active(role="tabpanel", aria-labelledby="tab-01") Content for Tab 01
+			#tab-02.tab-pane.fade(role="tabpanel", aria-labelledby="tab-02") Content for Tab 02
+			#tab-03.tab-pane.fade(role="tabpanel", aria-labelledby="tab-03") Content for Tab 03
+
+
+
+	.col-xl-6
+		p.cheatsheet tabs justify (.nav-fill)
+		// tabs flex 
+
+		ul#tabsJustify-01.nav.nav-tabs.nav-fill(role="tablist")
+			li.nav-item
+				a.nav-link.active(href="#tab-justify-01", data-toggle="tab", role="tab", aria-controls="nav-tab-01", aria-selected="true") Tab 01
+			li.nav-item
+				a.nav-link(href="#tab-justify-02", data-toggle="tab", role="tab", aria-controls="nav-tab-02", aria-selected="false") Tab 02
+			li.nav-item
+				a.nav-link(href="#tab-justify-03", data-toggle="tab", role="tab", aria-controls="nav-tab-03", aria-selected="false") Tab 03
+
+		#tabsJustifyContent-01.tab-content
+			#tab-justify-01.tab-pane.fade.show.active(role="tabpanel", aria-labelledby="tab-01") Content for Tab 01
+			#tab-justify-02.tab-pane.fade(role="tabpanel", aria-labelledby="tab-02") Content for Tab 02
+			#tab-justify-03.tab-pane.fade(role="tabpanel", aria-labelledby="tab-03") Content for Tab 03

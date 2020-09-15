@@ -1,0 +1,50 @@
+//- VARIABILE
+//-=========================================================================
+- var titlu = 'Listing articole';
+
+include article/_article.pug
+include article/_list.pug
+include article/__data-listing-articles.pug
+include _elements/_abonare-newsletter.pug
+include _elements/_pagination.pug
+include _elements/_subjects.pug
+
+
+//- HTML
+//-=========================================================================
+doctype html
+html
+	include _elements/_head.pug
+	body.prima-pagina
+
+		// navigation 
+		include navigation/_main-menu.pug
+
+		.container-fluid
+
+			// SUBIECTE
+			.container-subiecte
+				+subjects([{tagValue: 'noutăți'}])
+			
+			// LISTING PRINCIPAL 
+			.row.half-spacing.elem-sm-2.elem-lg-3
+				+articleList(listaArticole, [{'elemNo':1,'typeClass':'featured-article'}])(nrElemente=16, previewTextLength='120')
+
+			// paginare 
+			.full-spacing-bottom
+				+pagination([1, 2, 3])(activePage=1)
+
+		
+			// Recomandări 
+			.border-top.half-spacing
+				h4.half-spacing Recomandări
+
+				.row.elem-sm-2.elem-md-4
+					+articleList(listaArticole)(nrElemente=4, listTypeClass='small-article')
+
+
+			// ABONARE NEWSLETTER 
+			+abonareNewsletter(class='border-top')
+
+		//- FOOTER
+		include _elements/_footer.pug

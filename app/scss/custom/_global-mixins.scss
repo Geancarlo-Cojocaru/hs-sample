@@ -1,0 +1,36 @@
+//
+// ELEMENT FONT SIZING
+// --------------------------------------------------
+@mixin element-font-sizes($fz-xs:null, $fz-sm:null, $fz-md:null, $fz-lg:null, $fz-xl:null) {
+	font-size: rem($fz-xs);
+	@include media-breakpoint-up(sm) {font-size: rem($fz-sm);}
+	@include media-breakpoint-up(md) {font-size: rem($fz-md);}
+	@include media-breakpoint-up(lg) {font-size: rem($fz-lg);}
+	@include media-breakpoint-up(xl) {font-size: rem($fz-xl);}
+}
+
+
+
+//
+// ELEMENT LINE HEIGHTS
+// --------------------------------------------------
+@mixin element-line-heights($lh-xs:null, $lh-sm:null, $lh-md:null, $lh-lg:null, $lh-xl:null) {
+	line-height: $lh-xs;
+	@include media-breakpoint-up(sm) {line-height: $lh-sm;}
+	@include media-breakpoint-up(md) {line-height: $lh-md;}
+	@include media-breakpoint-up(lg) {line-height: $lh-lg;}
+	@include media-breakpoint-up(xl) {line-height: $lh-xl;}
+}
+
+
+
+//
+// ELEMENT TOP MARGINS (PREVIEW TEXT)
+// --------------------------------------------------
+@mixin element-top-margins($mt-xs:null, $mt-sm:null, $mt-md:null, $mt-lg:null, $mt-xl:null) {
+	margin-top: rem($mt-xs);
+	@include media-breakpoint-up(sm) {margin-top: rem($mt-sm);}
+	@include media-breakpoint-up(md) {margin-top: rem($mt-md);}
+	@include media-breakpoint-up(lg) {margin-top: rem($mt-lg);}
+	@include media-breakpoint-up(xl) {margin-top: rem($mt-xl);}
+}

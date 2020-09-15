@@ -1,0 +1,56 @@
+//- Navbar
+//-=========================================================================
+include _main-menu-links.pug
+include _menu-data-json.pug
+
+
+
+// navbar
+.nav-container#goTop
+	nav.navbar.navbar-expand-md.navbar-light.custom-navbar-1
+
+		// buton meniu 
+		button.navbar-toggler.buton-meniu(type="button", data-toggle='collapse', data-target='#navbarMenu', aria-controls='navbarMenu', aria-expanded='false', aria-label='Toggle navigation')
+			span.sr-only Navigare
+			span
+			span
+			span
+
+		// logo
+		.logo
+			a.navbar-brand(href="#")
+				include _svg/logo.pug
+
+		// buton cautare 
+		button.buton-search-menu(type="button", data-toggle="modal", data-target="#modal-cautare", data-backdrop="false")
+			include _svg/search.pug		
+
+		// buton top
+		a.buton-go-top.smooth-scroll(href="#goTop")
+			include _svg/arrow-up.pug
+
+		#navbarMenu.collapse.navbar-collapse
+			
+			// navigare 
+			ul.navbar-nav
+
+				//- menu builder mixin
+				+mainMenuLinks(buildMenu)
+
+
+			// extra nav icons 
+			ul.extra-nav-icons
+				li.description Urmărește-ne pe:
+				li
+					a(href="#!")
+						i.icon-rss
+				li
+					a(href="#!")
+						i.icon-facebook
+				li
+					a(href="#!")
+						i.icon-twitter
+
+
+// căutare 
+include _menu-search.pug

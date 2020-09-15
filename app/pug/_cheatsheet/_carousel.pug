@@ -1,0 +1,25 @@
+//- Listing
+//-=========================================================================
+include ../_elements/_carousel.pug
+include ../article/__data-listing-articles.pug
+
+
+
+
+h1.cheatsheet Carousel
+.row
+
+
+	//- CONSTRUCTOR
+	//-____________________________________________________
+
+	.col-xl-12
+		p.cheatsheet test carusel		
+
+		.container-carusel
+			.carousel-multimedia.full-spacing
+				h2.text-light Multimedia
+				.info Playlistul săptămânii
+
+				.row
+					+carousel(listaArticole)(listTypeClass='big-article',imageTypeClass='featured-article', nrElemente=5, previewTextLength=120)

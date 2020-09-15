@@ -1,0 +1,52 @@
+//- Images
+//-=========================================================================
+
+h1.cheatsheet Images
+.row
+
+
+	.col-md-4
+		p.cheatsheet Image fit cover - 16:9, 16:10, 4:3, 1:1
+
+		// image fit cover 
+		.imagine-fit.format-16-9
+			.poza
+				img(data-object-fit="cover", src="images/_build/16-9.png", alt="")
+
+
+	.col-md-4
+		p.cheatsheet Image fit contain - 16:9, 16:10, 4:3, 1:1
+
+		// image fit contain 
+		.imagine-fit.contain.format-16-9
+			.poza
+				img(data-object-fit="contain" src="images/_build/4-3.png", alt="")
+		
+
+	.col-md-4
+		p.cheatsheet Animație zoom simplă
+
+		// image fit animat zoom 
+		.imagine-fit.format-16-9.animat-zoom
+			.poza
+				img(data-object-fit="cover", src="images/_build/16-9.png", alt="")
+
+
+	.col-md-4
+		p.cheatsheet Animație opacity simplă
+
+		// image fit animat opacity 
+		.imagine-fit.format-16-9.animat-opacity
+			.poza
+				img(data-object-fit="cover", src="images/_build/16-9.png", alt="")
+
+
+	.col-md-4
+		p.cheatsheet Animație cu elemente
+
+		// image fit animat elemente 
+		.imagine-fit.format-16-9.animat-elemente
+			.poza
+				img(data-object-fit="cover", src="images/_build/1-1.png", alt="")
+				.element-animat
+					i.material-icons arrow_forward

@@ -1,0 +1,84 @@
+//- VARIABILE
+//-=========================================================================
+- var titlu = 'Cheatsheet';
+
+
+
+//- HTML
+//-=========================================================================
+doctype html
+html
+	include _elements/_head.pug
+	body
+
+		// navigation 
+		include navigation/_main-menu.pug
+
+		.container-fluid
+
+			// typography 
+			include _cheatsheet/_typography.pug
+
+			// buttons 
+			include _cheatsheet/_buttons.pug
+
+			// tags  
+			include _cheatsheet/_tags.pug
+
+			// grid 
+			include _cheatsheet/_grid.pug
+
+			// navs 
+			include _cheatsheet/_navs.pug
+
+			// tabs 
+			include _cheatsheet/_tabs.pug
+
+			// dropdown 
+			include _cheatsheet/_dropdown.pug
+
+			// images 
+			include _cheatsheet/_images.pug
+
+			// listing 
+			include _cheatsheet/_listing.pug
+
+			// comentarii 
+			include _cheatsheet/_comments.pug
+
+			// persoane  
+			include _cheatsheet/_persons.pug			
+
+			// article detail 
+			include _cheatsheet/_article.pug
+
+			// carousel 
+			include _cheatsheet/_carousel.pug
+
+			// form 
+			include _cheatsheet/_form.pug
+
+			// progress 
+			include _cheatsheet/_progress.pug
+
+			// tables 
+			include _cheatsheet/_tables.pug
+
+			// modal 
+			include _cheatsheet/_modal.pug
+
+			// icons 
+			include _cheatsheet/_icons.pug
+
+			// abonare newsletter  
+			include _elements/_abonare-newsletter.pug
+			+abonareNewsletter(class="border-top")
+
+		
+
+		//- COOKIES
+		include _elements/_cookies.pug
+
+
+		//- FOOTER
+		include _elements/_footer.pug

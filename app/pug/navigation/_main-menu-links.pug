@@ -1,0 +1,76 @@
+include _menu-tags.pug
+include _menu-data-json.pug
+
+
+//- MAIN MENU
+//-=========================================================================
+mixin mainMenuLinks(array)
+
+	each firstLevel in array
+		
+		//- with Second level links
+		if (firstLevel.hasOwnProperty('subcategories') || firstLevel.hasOwnProperty('blockSubmenu'))			
+
+				// categorie 
+				li.nav-item.dropdown
+					a.nav-link.dropdown-toggle(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")= firstLevel.categoryName
+
+					// subcategorii dropdowns 
+					ul.dropdown-menu(aria-labelledby="navbarDropdown")
+						li.back-element Back to main menu
+
+
+						//- block submenu
+						if (firstLevel.hasOwnProperty('blockSubmenu'))
+							li.block-submenu
+								+menuTags(menuTags)
+
+						
+						//- normal submenu
+						else
+							li.nume-categorie= firstLevel.categoryName							
+
+								//- iteration through subcategories
+								each secondLevel in firstLevel.subcategories
+
+
+									//- with Third level links
+									if (secondLevel.hasOwnProperty('subSubcategories'))
+										
+											// dropdown submenu 
+											li.dropdown-submenu
+												a.dropdown-item.dropdown-toggle(href="#")= secondLevel.subcategoryName
+												ul.dropdown-menu
+													li.back-element Back to #{firstLevel.categoryName}
+													li.nume-categorie= secondLevel.subcategoryName
+
+													//- iteration through sub-subcategories
+													each thirdLevel in secondLevel.subSubcategories
+														li
+															a.dropdown-item(href="#")= thirdLevel.subSubcategoryName
+
+
+									//- Second level links only
+									else
+										li
+											a.dropdown-item(href="#")= secondLevel.subcategoryName
+
+
+		//- secondary menu
+		else if (firstLevel.hasOwnProperty('secondaryMenu'))
+			// secondary menu 
+			li.secondary
+				ul.seconday-menu
+
+					//- iteration through links
+					each secondaryLinks in firstLevel.secondaryMenu
+						
+						li.secondary-link
+							a.link-title(href="#")= secondaryLinks.secodaryName
+
+
+		//- First level links only
+		else
+			// categorie 
+			li.nav-item
+				a.nav-link(href="#")= firstLevel.categoryName

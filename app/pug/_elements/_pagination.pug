@@ -1,0 +1,15 @@
+//- PAGINARE
+//-=========================================================================
+mixin pagination(array)
+
+	nav.pagination-custom
+
+		.pages
+			each page, index in array
+				if (index == attributes.activePage - 1)
+					a.btn.btn-lg.btn-light.btn-mobil.current(href='#')= page
+				else
+					a.btn.btn-lg.btn-light.btn-mobil(href='#')= page
+
+		.more
+			a.btn.btn-lg.btn-light.btn-mobil(href="#") Pagina următoare

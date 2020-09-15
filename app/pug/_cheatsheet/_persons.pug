@@ -1,0 +1,125 @@
+//- Persons
+//-=========================================================================
+include ../article/_person.pug
+
+
+
+//- DATA
+//-____________________________________________________
+- 
+	var personFeatured = 
+	{
+		personPhoto: 				'images/_build/faces/face-01.jpg',
+		personName: 				'Marian Popescu',
+		personDescription: 	'Editor senior',
+		personLink: 				'#'
+	}
+
+
+- 
+	var personSmall = 
+	{
+		personPhoto: 				'images/redactia-hs.svg',
+		personName: 				'Hot Sport',
+		personDescription: 	'Redacția'
+	}
+
+
+- 
+	var personNophoto = 
+	{
+		personPhoto: 				'images/redactia-fi.svg',
+		personName: 				'Hot Sport',
+		personDescription: 	'Redacția'
+	}
+
+
+- 
+	var bigPersons = 
+
+	[
+		{
+			personPhoto: 'images/_build/faces/face-02.jpg',
+			personName: 'Marian Popescu',
+			personDescription: 'Editor senior',
+			devClass: 'col-lg-2'
+		},
+		{
+			personPhoto: 'images/_build/faces/face-03.jpg',
+			personName: 'Marian Popescu',
+			personDescription: 'Editor senior',
+			devClass: 'col-lg-2'
+		},
+		{
+			personPhoto: 'images/_build/faces/face-04.jpg',
+			personName: 'Marian Popescu',
+			personDescription: 'Editor senior',
+			devClass: 'col-lg-2'
+		}
+	]
+
+
+- 
+	var persons = 
+
+	[
+		{
+			personPhoto: 'images/_build/faces/face-0.jpg',
+			personName: 'George Ionescu',
+			personDescription: 'Colaborator',
+			devClass: 'col-lg-2'
+		},
+		{
+			personPhoto: 'images/_build/faces/face-1.jpg',
+			personName: 'George Ionescu',
+			personDescription: 'Colaborator',
+			devClass: 'col-lg-2'
+		},
+		{
+			personPhoto: 'images/_build/faces/face-2.jpg',
+			personName: 'George Ionescu',
+			personDescription: 'Colaborator',
+			devClass: 'col-lg-2'
+		}
+	]
+
+
+
+h1.cheatsheet Persons
+br
+
+.row
+
+	.col-lg-3.persons-featured
+		p.cheatsheet person featured
+		+person(personFeatured)
+
+
+	.col-lg-2.persons-small
+		p.cheatsheet persons small (author)
+		+person(personSmall)
+
+
+	.col-lg-2
+		p.cheatsheet person no photo; typeClass='no-photo' elimină de tot poza
+		+person(personSmall)(typeClass="no-photo")
+
+
+	.col-lg-2.persons-mini
+		p.cheatsheet person mini; class='no-photo' ascunde poza
+		+person(personSmall)(class="no-photo")
+
+
+p.cheatsheet persons 'big' list
+.row.persons-big
+	+personList(bigPersons)
+
+
+p.cheatsheet persons list (default person, defalt person list)
+.row
+	+personList(persons)
+
+p.cheatsheet persons list small, no-photo
+.row
+	+personList(persons)(class='persons-small', typeClass="no-photo")
+	

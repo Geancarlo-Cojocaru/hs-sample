@@ -1,0 +1,75 @@
+//- VARIABILE
+//-=========================================================================
+- var titlu = 'Home';
+
+include article/_article.pug
+include article/_list.pug
+include _elements/_carousel.pug
+include article/__data-listing-articles.pug
+include _elements/_abonare-newsletter.pug
+
+
+//- HTML
+//-=========================================================================
+doctype html
+html
+	include _elements/_head.pug
+	body.prima-pagina
+
+		// navigation 
+		include navigation/_main-menu.pug
+
+		.container-fluid
+			
+			// LISTING PRINCIPALi 
+			.row.half-spacing.elem-sm-2.elem-lg-3
+				+articleList(listaArticole, [{'elemNo':1,'typeClass':'featured-article'}])(nrElemente=7, previewTextLength='120')
+
+			// mai multe noutăți 
+			.full-spacing-bottom.text-sm-center
+				a.btn.btn-primary.btn-lg.btn-mobil(href="#") Mai multe articole
+
+		
+			.border-top.full-spacing
+
+				// două coloane home 
+				.row
+
+					// RECOMANDĂRI 
+					.col-lg-9
+						h1 Recomandări
+
+						.row.half-spacing
+							+articleList(listaArticole)(listTypeClass='big-article', nrElemente=4, previewTextLength='120')
+
+
+					// TOP ARTICOLE 
+					.col-lg-3
+						
+						// sidebar 
+						.sidebar.right
+							h4.title.text-primary.half-spacing Top articole
+							.row.elem-sm-3.elem-lg-1
+								+articleList(listaArticole)(listTypeClass='mini-article', nrElemente=3, previewTextLength='120')
+
+
+				// mai multe recomandări 
+				.text-sm-center
+					a.btn.btn-primary.btn-lg.btn-mobil(href="#") Mai multe articole
+
+			
+			// CARUSEL 
+			.container-carusel
+				.carousel-multimedia.full-spacing
+					h1.h2.text-light Multimedia
+					.info Playlistul săptămânii
+
+					.row
+						+carousel(listaArticole)(listTypeClass='big-article',imageTypeClass='featured-article', nrElemente=5, previewTextLength=120)
+
+
+			// ABONARE NEWSLETTER 
+			+abonareNewsletter
+
+		//- FOOTER
+		include _elements/_footer.pug

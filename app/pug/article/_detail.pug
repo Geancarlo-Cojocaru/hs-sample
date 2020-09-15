@@ -1,0 +1,184 @@
+//-
+//- ARTICLE DETAIL, ALL OPTIONS
+//- --------------------------------------------------
+//-
+	Se apelează mixinul cu
+	+articleDetail(array)
+
+	Ia tipul (video, gallery, normal) din array
+
+	Pt. că în proiectul de față nu vreau să bulească ceva clientul, sidebarul e doar pe articolul normal
+
+
+mixin articleDetail(article)
+
+
+	//- verificator pt date constructor, poate avem o eroare în nume
+	if(article === undefined || article.length == 0)
+		p no data for build
+
+	//- constructor cu limitator pt. nr de articole; compensăm numărătoarea de la 0 (vreau 2 articole, trec 2)
+	else
+
+	
+
+		// DETALIU ARTICOL 
+		//- article.categoryType e ca să vedem dacă e video, galerie sau normal
+		.row.full-spacing.article-detail.justify-content-center(class=article.categoryType)
+
+
+
+			// head article 
+			.col-sm-10.col-lg-8.order-lg-0
+				.published-on= article.date
+				h1.display-1= article.title
+				.persons-mini
+					+person(article.author)(class="no-photo")
+				p.lead= article.previewText
+
+
+
+			// main image 
+			.col-12.half-spacing-bottom.main-image.order-lg-1
+				.row.justify-content-center
+					
+					.col-12.col-sm-10.sociale
+						.row
+							// social media
+							.col-8.social-media.text-left
+								button.util-button.bordered
+									i.icon-facebook
+								button.util-button.bordered
+									i.icon-twitter
+								span
+									button.util-button(disabled)
+										i.icon-share
+									strong= article.shares
+
+							// comments
+							.col-4.social-media.text-right
+								span
+									strong= article.comments.length
+									a.util-button.bordered(href="#article-comments")
+										i.material-icons chat
+
+					// the image
+					.col-12.col-lg-10
+						figure
+
+							//- dacă e video
+							if (article.categoryType === 'is-video')
+								.video-container
+									iframe(width='560', height='315', src=article.categoryTypeLink, frameborder='0', allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen='')
+
+							//- dacă e normal sau galerie
+							else
+								.imagine-fit.format-16-9
+									.poza
+
+										//- mărimi pt srcset
+										- var isrcset = article.image + " 438w," + article.imageDetailArticle + " 1170w,"
+										- var isizes = "(max-width: 420px) 420px, 1170px"
+
+										img(data-object-fit=article.imageFitType || "cover", alt="", src=article.image, srcset=isrcset, sizes=isizes)
+								
+								figcaption= article.imageCaption
+
+
+
+			// main content 
+			.col-12.col-sm-10.col-md-9.col-lg-6.order-lg-3
+
+				// the content 			
+				.article-content
+
+					//- aici e un mic hack pt că pug nu știe 'include' dinamic
+					if (article.content === 'content-article')
+						include _for-build/_content-article.pug
+					else if(article.content === 'content-article-gallery')
+						include _for-build/_content-article-gallery.pug
+					else if(article.content === 'content-article-video')
+						include _for-build/_content-article-video.pug
+					else
+						= article.content
+
+					.row
+						// social media
+						.col-8.social-media
+							button.util-button.bordered
+								i.icon-facebook
+							button.util-button.bordered
+								i.icon-twitter
+							button.util-button(disabled)
+								i.icon-share
+							strong= article.shares
+
+						// comments
+						.col-4.social-media.text-right
+							strong= article.comments.length
+							a.util-button.bordered(href="#article-comments")
+								i.material-icons chat
+
+
+
+			// author & tags 
+			.col-lg-3.order-lg-2.full-spacing-bottom
+				.row.justify-content-lg-end
+					.col-lg-8
+						.persons-small.d-none.d-lg-block
+							+person(article.author)
+
+						//- verificăm tipul de articol; se schimbă î funcție de tipul de articol
+						if (article.categoryType === 'is-gallery' || article.categoryType === 'is-video')
+						
+						else
+							.block-tags
+								+tagList(article.tagsList)(class='justify-content-sm-center')
+
+
+
+			// sidebar 
+			.col-lg-3.order-lg-4
+
+				//- verificăm tipul de articol; se schimbă î funcție de tipul de articol
+				if (article.categoryType === 'is-gallery' || article.categoryType === 'is-video')
+					.row
+						.col-lg-8
+							.block-tags
+								+tagList(article.tagsList)(class='justify-content-sm-center')
+
+				else
+					.sidebar.right
+						h4.title.text-primary.half-spacing Top articole
+						.row.elem-sm-2.elem-md-3.elem-lg-1
+							+articleList(listaArticole)(listTypeClass='mini-article', nrElemente=3, previewTextLength='120')
+
+
+
+
+		// RECOMANDĂRI 
+		.border-top.half-spacing
+			h4.half-spacing Recomandări
+
+			.row.elem-sm-2.elem-md-3
+				+articleList(listaArticole)(nrElemente=3, previewTextLength='120')
+
+
+
+
+		// COMENTARII 
+		.row.border-top.full-spacing.justify-content-center#article-comments
+			.col-sm-10.col-md-9.col-lg-6
+				+articleComments(article.comments)
+
+
+
+
+		// ALTE ARTICOLE 
+		.border-top.half-spacing
+			h4.half-spacing Te-ar putea interesa
+
+			.row.elem-sm-2.elem-md-4
+				+articleList(listaArticole)(nrElemente=4, listTypeClass='small-article')
+						
+					

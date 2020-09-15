@@ -1,0 +1,28 @@
+//- Subjects
+//-=========================================================================
+mixin subjects(array)
+
+	.subjects
+		.title Subiecte:
+		.tags
+			+tagList(array, 'tags-button')
+		.add
+			button.buton-add(type="button", data-toggle="modal", data-target="#modal-subiecte", data-backdrop="false")
+				span Adaugă subiecte
+
+	
+	// MODAL
+	#modal-subiecte.modal.fade.bd-example-modal-full(tabindex="-1", role="dialog", aria-labelledby="exampleModalLabel", aria-hidden="true")
+		.modal-dialog.modal-full(role="document")
+			.modal-content
+
+				// buton close 
+				button.buton-close-mare(type="button", data-dismiss="modal", aria-label="Close")
+					span.sr-only Închide
+					span
+					span
+					span
+
+				// continut 
+				.modal-body
+					+menuTags(menuTags)

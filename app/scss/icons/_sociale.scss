@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'icomoon';
+  font-style: normal;
+  font-weight: 400;
+  src: url(#{$path--fonts}/icomoon.eot); /* For IE6-8 */
+  src: local('icomoon'),
+       url(#{$path--fonts}/icomoon.woff2) format('woff2'),
+       url(#{$path--fonts}/icomoon.woff) format('woff'),
+       url(#{$path--fonts}/icomoon.ttf) format('truetype');
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  font-size: $icon-size;  /* Preferred icon size */
+  display: inline-block;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-twitter:before {
+  content: "\f099";
+}
+.icon-facebook:before {
+  content: "\f09a";
+}
+.icon-rss:before {
+  content: "\f09e";
+}
+.icon-linkedin:before {
+  content: "\f0e1";
+}
+.icon-youtube:before {
+  content: "\f167";
+}
+.icon-tumblr:before {
+  content: "\f173";
+}
+.icon-skype:before {
+  content: "\f17e";
+}
+.icon-google:before {
+  content: "\f1a0";
+}
+.icon-soundcloud:before {
+  content: "\f1be";
+}
+.icon-share:before {
+  content: "\f1e0";
+}
+.icon-pinterest:before {
+  content: "\f231";
+}
+.icon-whatsapp:before {
+  content: "\f232";
+}
+.icon-vimeo:before {
+  content: "\f27d";
+}

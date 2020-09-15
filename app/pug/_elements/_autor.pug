@@ -1,0 +1,29 @@
+//- Autor
+//-=========================================================================
+- 
+	var personFeatured = 
+	{
+		personPhoto: 				'images/_build/faces/face-01.jpg',
+		personName: 				'Marian Popescu',
+		personDescription: 	'Editor senior'
+	}
+
+
+mixin autor
+
+	.row.justify-content-center
+		.col-md-9.col-lg-7.col-xl-6.text-center
+			.persons-featured
+				+person(personFeatured)
+
+			.article-content.full-spacing-top.half-spacing-bottom
+				p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+			.follow.half-spacing-top
+				button.btn.btn-sm.btn-follow.facebook
+					i.icon-facebook
+					|  Facebook
+
+				button.btn.btn-sm.btn-follow.twitter
+					i.icon-twitter
+					|  Twitter

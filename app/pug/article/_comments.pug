@@ -1,0 +1,112 @@
+//- COMMENTS
+mixin articleComments(array)
+	
+	.article-comments(class!=attributes.class)
+		
+		h3 Comentarii
+		p.info Suntem interesați de remarci bine informate și articulate care sunt relevante față de articolul curent. Sunt bine venite sfaturile sau critica dvs. atâta vreme cât comentariul este politicos.
+
+		button.btn.btn-primary(type='button', data-toggle='collapse', data-target='#addComment-0', aria-expanded='false', aria-controls='addComment-0') Adaugă un comentariu
+
+		.collapse(id='addComment-0')
+			+commentsPost(false, true)
+
+
+		// lista 
+		.comments-list
+
+
+			//- IF THERE ARE NO COMMENTS
+			if(array === undefined || array.length == 0)
+				p.no-comments Deocamdată nu există nici un comentariu. Fii primul care-și spune opinia!
+
+
+			//- IF THERE ARE COMMENTS
+			else
+
+
+				// filters 
+				.comment-filters
+					button.active Cronologic
+					button Aprecieri
+
+
+				each comment in array
+
+					//- check if the comment is a reply
+					-
+						var checkComment = function(checkComment) {
+							if (comment.hasOwnProperty('replyTo')) {
+								return ('isReply');
+							}
+						};
+					//- end checking
+
+
+					// comment 
+					.comment(class=checkComment())
+
+						//- author 
+						.comment-author
+
+							//- author photo
+							if (comment.hasOwnProperty('authorPhoto'))
+								img(src=comment.authorPhoto, alt='')
+
+							else
+								img(src='images/icons/user.svg', alt='')
+
+							//- author name
+							.author-name
+
+								//- the name
+								strong= comment.authorName
+
+								//- if it is a reply
+								if (comment.hasOwnProperty('replyTo'))
+									span  @ #{comment.replyTo}
+
+								//- comment date
+								small= comment.commentDate
+
+
+						//- comment content
+						.comment-content
+							p Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+
+
+						//- comment options
+						.comment-options
+
+							//- reply
+							.option
+								button.comment-option(type='button', data-toggle='collapse', data-target='#addComment-' + array.indexOf(comment) + 1, aria-expanded='false', aria-controls='addComment-' + array.indexOf(comment) + 1)
+									i.material-icons forum
+									| Răspunde
+
+							//- report
+							.option
+								button.comment-option(disabled)
+									i.material-icons not_interested
+									| Raportează
+
+							//- reply
+							.option
+								button.comment-option(disabled)
+									i.material-icons.text-primary favorite
+									| +5
+
+
+						//- replay, like, report
+						.collapse(id='addComment-' + array.indexOf(comment) + 1)
+							+commentsPost(false, true)
+
+
+				// load more 
+				if(array.length > 2)
+					.load-more-comments
+						button.btn.btn-outline-light Vezi toate comentariile
+						
+		
+	
+

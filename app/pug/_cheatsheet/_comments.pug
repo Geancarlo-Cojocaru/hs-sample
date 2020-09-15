@@ -1,0 +1,71 @@
+//- Listing
+//-=========================================================================
+include ../article/_comments.pug
+include ../article/_comments-post.pug
+
+
+h1.cheatsheet Comentarii
+.row
+
+
+	.col-xl-12
+		p.cheatsheet model comentarii
+
+
+		//- DATA
+		//-____________________________________________________
+		- 
+			var comentariiArticol = 
+
+			[
+				{
+					authorName: 'George Ionescu',
+					commentDate: 'acum 1 oră',
+					authorPhoto:'images/_build/faces/face-02.jpg'
+				},
+				{
+					authorName: 'Vasile Popescu',
+					commentDate: 'acum 1 oră',
+					authorPhoto:'images/_build/faces/face-03.jpg'
+				},
+				{
+					authorName: 'Maria Dumitru',
+					replyTo: 'Vasile Popescu',
+					commentDate: 'acum 1 oră',
+					authorPhoto:'images/_build/faces/face-04.jpg'
+				}
+			]
+
+
+
+		//- CONSTRUCTOR
+		//-____________________________________________________
+		.row
+			.col-md-6
+				+articleComments(comentariiArticol)
+
+			.col-md-6
+				+articleComments(n)
+
+	.col-xl-6
+		p.cheatsheet model posteaza comentariu (nelogat)
+
+			+commentsPost(false, true)
+
+	.col-xl-6
+		p.cheatsheet model posteaza comentariu (logat)
+
+			+commentsPost(true, true)
+
+	.col-xl-6
+		p.cheatsheet model raportează/apreciază comentariu (nelogat)
+
+			+commentsPost(false, false)
+
+	.col-xl-6
+		p.cheatsheet model raportează/apreciază comentariu (nelogat), cu extraclasă (ascunde imaginea și textarea)
+
+			+commentsPost(false, false)(class="login-only")
+
+
+	.col-xl-6

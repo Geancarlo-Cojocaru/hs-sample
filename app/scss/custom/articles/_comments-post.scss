@@ -1,0 +1,71 @@
+//
+// COMMENT POST
+// --------------------------------------------------
+.comment-post {
+	display: flex;	
+
+	img.user-photo {
+		width: $comment-image-size;
+		height: $comment-image-size;
+		border-radius: $comment-image-border-radius;
+	}
+
+	.user-utils {
+		flex: 1 1 auto;
+		padding-left: 18px;
+
+		&:only-child {
+			padding: 0;
+		}
+	}
+
+	// single, without textarea
+	.user-auth {
+		font-size: rem(14px);
+
+		span {
+			display: block;
+			margin: 0px 0px 6px 0px;
+
+			@include media-breakpoint-up(sm) {
+				display: inline-block;
+				margin: 0;
+				padding: 10px 14px 0px 0px;
+			}
+		}
+
+		button {
+			margin-right: 2px;
+		}
+	}
+
+	// with textarea
+	.form-control ~ .user-auth {
+		margin-top: 18px;
+
+		span {
+			margin-top: -10px;
+
+			@include media-breakpoint-up(sm) {
+				margin: 0;
+			}
+		}
+	}
+
+
+	// login only
+	&.login-only {
+
+		.user-photo, .form-control {
+			display: none;			
+		}
+
+		.user-utils {
+			padding: 0;
+		}
+
+		.user-auth, {
+			margin: 0;
+		}
+	}
+}

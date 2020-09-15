@@ -1,0 +1,35 @@
+//
+// MODAL FULL
+// --------------------------------------------------
+.modal-full {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;  
+
+  .modal-content {
+  	flex-direction: column;
+    justify-content: center;
+  	margin: 0;
+  	padding: 0;
+    width: 100%;
+    height: 100%;
+    border: 10px solid #fff;
+    border-radius: 0;
+    background-color: $light-1;
+    overflow-y: auto;
+
+    @include media-breakpoint-up(sm) {border-width: 20px;}
+  }
+
+  .modal-body {
+  	margin-left: auto;
+  	margin-right: auto;
+  	display: flex;
+    height: 100%;
+    flex-direction: column;
+    width: 100%;
+    max-width: 926px;  	
+  }
+}

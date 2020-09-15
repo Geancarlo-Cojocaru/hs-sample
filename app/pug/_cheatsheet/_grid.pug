@@ -1,0 +1,25 @@
+//- Dropdown
+//-=========================================================================
+
+h1.cheatsheet Grid
+br
+
+p.cheatsheet grid bootstrap
+
+.row
+	
+	each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+		.col-1
+			p.bg-light-1= val
+
+.row
+	.col-8
+		p.bg-light 8
+
+
+p.cheatsheet grid custom; se pune pe părinte, copii se ajustează automat la nr. de elemente; se pune sub forma elem-breakpoint-nr (elem-sm-3 = 3 pe rând de la sm în sus); pot fi 1, 2, 3 ,4 ,5 sau 6 pe rând
+
+.row.elem-sm-2.elem-md-3.elem-lg-6
+	each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+		div
+			p.bg-light-1= val

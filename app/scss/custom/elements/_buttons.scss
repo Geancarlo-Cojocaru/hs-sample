@@ -1,0 +1,268 @@
+//
+// VARIABLES
+// --------------------------------------------------
+$facebook-color: 					#3C5A99;
+$google-color:						#D34836;
+$twitter-color:						#00ACED;
+
+$social-size:							rem(40px);
+$util-size:								rem(46px);
+
+
+//
+// Social login buttons
+// --------------------------------------------------
+.social-login {
+	display: inline-block;	
+	width: $social-size;
+	height: $social-size;
+	overflow: hidden;	
+	border: none;
+	border-radius: 50%;
+	color: $body-color;
+	text-align: center;
+	background-color: $light-2;
+	vertical-align: top;
+	transition: all 0.25s ease;
+
+	&.facebook, &.google, &.twitter {
+		color: #fff;
+	}
+
+	&.facebook {
+		background-color: $facebook-color;
+		&:hover {background-color: darken($facebook-color, 7.5%)}
+	}
+
+	&.google {
+		background-color: $google-color;
+		&:hover {background-color: darken($google-color, 7.5%)}
+	}
+
+	&.twitter {
+		background-color: $twitter-color;
+		&:hover {background-color: darken($twitter-color, 7.5%)}
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	i {
+		display: inline-block;
+		margin-top: rem(5px);
+		font-size: rem(16px);
+
+		&.material-icons {
+			margin-top: rem(6px);
+			font-size: rem(18px);
+		}
+	}	
+}
+
+
+//
+// Follow
+// --------------------------------------------------
+.btn-follow {
+	color: #fff;
+
+	&.facebook {
+		background-color: $facebook-color;
+		&:hover {color: #fff; background-color: darken($facebook-color, 7.5%)}
+	}
+
+	&.twitter {
+		background-color: $twitter-color;
+		&:hover {color: #fff; background-color: darken($twitter-color, 7.5%)}
+	}
+
+	i {
+		display: inline-block;
+		margin: rem(-2px 3px 0px -2px);		
+		font-size: rem(14px);
+		vertical-align: top;		
+	}
+}
+
+
+
+//
+// Util buttons
+// --------------------------------------------------
+.util-button {
+	display: inline-flex;
+	width: $util-size;
+	height: $util-size;
+	overflow: hidden;	
+	border: none;
+	border-radius: 50%;
+	color: #333;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
+	vertical-align: top;
+	transition: all 0.25s ease;
+
+	&.bordered {
+		border: 2px solid #ccc;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&:hover:not([disabled]) {
+		color: #fff;
+		border-color: transparent;
+		background-color: #333;
+		text-decoration: none;
+		
+		i {color: #fff;}
+	}
+
+	i {		
+		display: inline-block;	
+		font-size: rem(22px);		
+		color: #333;
+		transition: all 0.25s ease;
+
+		&.material-icons {
+			margin-top: rem(1px);
+			font-size: rem(24px);
+		}
+	}
+}
+
+
+
+
+//
+// Default buttons
+// --------------------------------------------------
+.btn-outline-light {
+	color: $headings-color;
+	border-color: $light-2;
+}
+
+
+//
+// BUTON MOBIL
+// --------------------------------------------------
+.btn.btn-mobil {
+	@include media-breakpoint-down(sm) {
+		padding: rem(11px 20px 10px 20px);
+	}	
+}
+
+
+
+//
+// BUTON cu ICON
+// --------------------------------------------------
+.btn.with-icon {
+	display: inline-flex;
+	align-items: center;
+
+	i {
+		margin: rem(-8px 6px -5px -5px);
+	}
+}
+
+.btn.btn-light.with-icon:hover {
+	color: #fff;
+	background-color: $primary;
+}
+
+
+
+
+//
+// BUTON CLOSE MARE; importa si suprascrie din buton-meniu
+// --------------------------------------------------
+.buton-close-mare {
+	position: fixed;
+  top: 20px;
+  right: 20px;
+  left: auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+	background-color: $primary;
+	z-index: 10;
+
+	@include media-breakpoint-up(sm) {
+		top: 40px;
+		right: 40px;
+		width: 50px;
+  	height: 50px;
+	}
+
+	span {
+		margin: 3px auto;
+		background-color: #fff;
+
+		&:nth-of-type(3) {background-color: transparent;}
+		&:nth-of-type(2) {transform: translate(0px, 5px) rotate(45deg);}
+    &:nth-of-type(4) {transform: translate(0px, -5px) rotate(-45deg);}
+	}
+}
+
+
+
+
+//
+// BUTON ADD
+// --------------------------------------------------
+.buton-add {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	display: inline-block;	
+	width: 34px;
+	height: 34px;
+	overflow: hidden;
+	border: 1px solid $light-2;
+	border-radius: 50%;
+	background-color: transparent;
+	text-align: center;
+
+	span {display: none;}
+
+	&:after {
+		margin: 6px 0px 0px 0px;
+		display: inline-block;
+    content: '';
+    width: rem(11px);
+    height: rem(11px);
+    overflow: hidden;    
+    vertical-align: top;
+    line-height: 0;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMSAxMSI+PHBhdGggZD0iTTUgMGgxdjExSDVWMHoiIGZpbGw9IiNkMjYyMjgiLz48cGF0aCBkPSJNMCA1aDExdjFIMFY1eiIgZmlsbD0iI2QyNjIyOCIvPjwvc3ZnPg==);
+	
+		@include media-breakpoint-up(md) {
+			margin-left: 10px;
+		}
+	}
+
+	&:focus {outline: none;}
+
+	@include media-breakpoint-up(md) {
+		width: 49px;
+		height: 49px;
+		transition: all 0.25s ease;
+
+		&:after {
+			margin: 6px 0px 0px 1px;
+			transition: all 0.25s ease;
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		&:hover {
+			background-color: $primary;
+			border-color: transparent;
+		}
+		&:hover:after {filter: brightness(4);}
+	}
+}

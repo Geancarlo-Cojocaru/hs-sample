@@ -1,0 +1,104 @@
+//- Listing
+//-=========================================================================
+include ../article/_article.pug
+include ../article/_list.pug
+
+
+//- DATA
+//-____________________________________________________
+
+- 
+	var soloArticle = 
+	{
+		typeClass:      				'big-article',
+		devClass:								'col-lg-8',
+		title:									'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+		previewText:						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+		link:										'#',
+		image:									'images/_build/4-3.png',
+		imageBigArticle:  			'images/_build/4-3.png',
+		imageFitType:						'contain',
+		categoryType:						'is-gallery',		
+		tagsList:								[{tagValue: 'fotbal'},{tagValue: 'antrenori'},{tagValue: 'național'}],
+	}
+
+
+
+- 
+	var listaMixata =
+
+	[
+		{
+			typeClass:      			'featured-article',
+			title:								'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+			previewText:					'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+			link:									'#',
+			image:								'images/_build/16-9.png',
+			imageFeaturedArticle:	'images/_build/16-9.png',
+			categoryType:					'is-gallery',
+			tagsList:							[{tagValue: 'fotbal'},{tagValue: 'antrenori'},{tagValue: 'național'}],
+		},
+		{
+			typeClass:      			'big-article',
+			devClass:       			'col-lg-9',
+			title:								'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+			previewText:					'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+			link:									'#',
+			image:								'images/_build/16-9.png',
+			imageBigArticle:			'images/_build/16-9.png',
+			categoryType:					'is-video',
+			tagsList:       			[{tagValue: 'fotbal'},{tagValue: 'antrenori'},{tagValue: 'național'}]
+		},
+		{
+			devClass:       			'col-sm-6 col-lg-4',
+			title:								'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+			previewText:					'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+			link:									'#',
+			image:								'images/_build/16-9.png',
+			imageSmallArticle:		'images/_build/16-9.png',
+			categoryType:					'is-gallery',
+			tagsList:       			[{tagValue: 'fotbal'},{tagValue: 'antrenori'},{tagValue: 'național'}]
+		},
+		{
+			typeClass:      			'small-article',
+			devClass:       			'col-sm-4 col-lg-3',
+			title:								'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+			previewText:					'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+			link:									'#',
+			image:								'images/_build/16-9.png',
+			imageSmallArticle:		'images/_build/16-9.png',
+			tagsList:       			[{tagValue: 'fotbal'},{tagValue: 'antrenori'},{tagValue: 'național'}]
+		},
+		{
+			typeClass:      			'mini-article',
+			devClass:       			'col-sm-4 col-lg-2',
+			title:								'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+			previewText:					'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+			link:									'#',
+			image:								'images/_build/16-9.png',
+			imageSmallArticle:		'images/_build/16-9.png',
+			imageMiniArticle:			'images/_build/16-9.png',
+			tagsList:       			[{tagValue: 'fotbal'},{tagValue: 'antrenori'},{tagValue: 'național'}]
+		}
+	]
+
+
+
+h1.cheatsheet Listing
+.row
+
+
+	//- CONSTRUCTOR
+	//-____________________________________________________
+
+	.col-xl-12
+		p.cheatsheet articol solo; toți parametrii în pug; ex image 'contain'
+		.row
+			+article(soloArticle)
+
+
+	.col-xl-12
+		p.cheatsheet lista articole
+		.row
+
+			+articleList(listaMixata)(previewTextLength=130)

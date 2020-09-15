@@ -1,0 +1,27 @@
+include ../article/_tags.pug
+
+#modal-cautare.modal.fade.bd-example-modal-full(tabindex="-1", role="dialog", aria-labelledby="exampleModalLabel", aria-hidden="true")
+  .modal-dialog.modal-full(role="document")
+    .modal-content
+      
+      // buton close 
+      button.buton-close-mare(type="button", data-dismiss="modal", aria-label="Close")
+        span.sr-only Închide
+        span
+        span
+        span
+        
+      // continut 
+      .modal-body
+        .menu-tags
+          .bloc-submenu-name Căutare
+          p Introduceți termenii căutării dvs. sau alegeți unul dintre subiectele de mai jos
+
+          form.form-cautare
+            input.input-cautare(type='text')
+            button.btn-cautare(type='submit')
+              include _svg/search.pug
+
+          .bloc-element
+            .bloc-name Subiecte populare
+            +tagList(subiecteCautare, 'tags-button')(class='no-icon')

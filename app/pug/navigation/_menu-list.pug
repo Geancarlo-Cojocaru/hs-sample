@@ -1,0 +1,8 @@
+//- MENU LIST
+//-=========================================================================
+mixin menuList(array)
+
+	ul.menu-list(class=attributes.class)
+		each pageName in array
+			li
+				a.link-text(href="#")= pageName

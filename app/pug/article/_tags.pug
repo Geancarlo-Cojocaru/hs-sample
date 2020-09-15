@@ -1,0 +1,39 @@
+//-
+//- SIMPLE TAG
+//- --------------------------------------------------
+mixin tag(tagValue, tagType)
+	
+	//- tag button 
+	if (tagType == 'tags-button')
+		button(class= [tagType, attributes.class].filter(Boolean).join(' ') )= tagValue
+
+	//- tag checkbox 
+	else if (tagType == 'tags-checkbox')
+		label(class= tagType)
+			input(type="checkbox")
+			span= tagValue
+
+	//- tag default; 'tag-text'
+	else
+		a(href="#!")= tagValue
+
+
+
+//-
+//- TAG LIST
+//- --------------------------------------------------
+mixin tagList(array, tagType)
+
+	//- IF THERE ARE NO TAGS
+	if(array === undefined || array.length == 0)
+
+	//- IF THERE ARE TAGS
+	else
+
+		ul(class = [tagType || 'tags-text', attributes.class].filter(Boolean).join(' ') )
+
+			each tag in array
+
+				li
+
+					+tag(tag.tagValue, tagType)

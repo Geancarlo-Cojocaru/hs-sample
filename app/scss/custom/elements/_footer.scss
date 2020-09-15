@@ -1,0 +1,20 @@
+//
+// FOOTER
+// --------------------------------------------------
+footer {
+	padding-bottom: $grid-gutter-width-xs * 2;
+	@include media-breakpoint-up(sm) {padding-bottom: $grid-gutter-width * 2}
+	@include media-breakpoint-up(xl) {padding-bottom: $grid-gutter-width-xl * 2}
+
+	.menu-list {
+		margin-top: $grid-gutter-width-xs * 2;
+		@include media-breakpoint-up(sm) {justify-content: center; margin-top: $grid-gutter-width * 2}
+		@include media-breakpoint-up(xl) {margin-top: $grid-gutter-width-xl * 2}
+	}
+
+	.copy {
+		margin-top: 3px;
+		font-size: rem(13px);
+		@include media-breakpoint-up(sm) {margin-top: 7px;}
+	}
+}

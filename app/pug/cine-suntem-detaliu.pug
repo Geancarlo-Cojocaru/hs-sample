@@ -1,0 +1,52 @@
+//- VARIABILE
+//-=========================================================================
+- var titlu = 'Detaliu autor';
+
+include article/_person.pug
+include article/__data-persons.pug
+include article/_article.pug
+include article/_list.pug
+include article/__data-listing-articles.pug
+include _elements/_abonare-newsletter.pug
+include _elements/_subjects.pug
+include _elements/_pagination.pug
+include _elements/_autor.pug
+
+
+//- HTML
+//-=========================================================================
+doctype html
+html
+	include _elements/_head.pug
+	body
+
+		// navigation 
+		include navigation/_main-menu.pug
+
+		.container-fluid
+
+			// SUBIECTE
+			.container-subiecte
+				+subjects([{tagValue: 'cine suntem'}])
+
+
+			// DETALII AUTOR
+			.border-bottom.full-spacing 
+				+autor
+
+
+			// LISTING PRINCIPAL 
+			.row.half-spacing.elem-sm-2.elem-lg-3
+				+articleList(listaArticole)(nrElemente=15, previewTextLength='120')
+
+
+			// paginare 
+			.full-spacing-bottom
+				+pagination([1, 2, 3])(activePage=1)
+
+
+			// ABONARE NEWSLETTER 
+			+abonareNewsletter(class='border-top')
+
+		//- FOOTER
+		include _elements/_footer.pug

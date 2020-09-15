@@ -1,0 +1,18 @@
+//
+// LISTING
+// comment what you won't need
+// --------------------------------------------------
+@import "_mixins";						 							// if you're using mixins
+@import "_tags";														// if you're using tags
+
+
+@import "_list-common";											// common elements for articles in listing
+@import "_list-types";											// types of articles in listing
+
+
+@import "_comments";												// comments for articles
+@import "_comments-post";												// comments for articles
+
+@import "_persons";													// persons
+
+@import "_article-content";									// the text in the content

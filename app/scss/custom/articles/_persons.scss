@@ -1,0 +1,150 @@
+//
+// VARIABLES
+// --------------------------------------------------
+$person-image:								96px;
+$person-image-featured:				160px;
+$person-image-big:						130px;
+$person-image-small:					90px;
+$person-image-mini:						90px;
+
+
+//
+// GENERAL
+// --------------------------------------------------
+.person {
+	display: block;
+	position: relative;	
+	font-family: $font-family-serif;
+	font-size: rem(17px);
+	color: $headings-color;
+	text-align: center;
+	line-height: 1.29411;
+
+	img {
+		margin-bottom: rem(19px);
+		display: inline-block;		
+		width: $person-image;
+		height: $person-image;
+		border-radius: 50%;
+		transition: transform 0.25s ease;
+	}
+
+	small {
+		display: block;
+		margin-top: rem(5px);
+		font-size: rem(13px);
+		color: $primary;
+	}
+
+	// no photo
+	&.no-photo img {
+		display: none;		
+	}
+
+	.person-link {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 1;
+
+		span {
+			display: none;			
+		}
+	}
+
+	.person-name {
+		transition: color 0.25s ease;
+	}
+
+	.person-link:hover ~ .person-name {
+		color: $primary;
+	}
+
+	.person-link:hover ~ img {
+		transform: scale(1.1);
+	}
+
+
+
+	// PERSONS FEATURED
+	// --------------------------------------------------
+	.persons-featured & {
+		font-size: rem(30px);
+
+		img {
+			margin-bottom: rem(29px);	
+			width: $person-image-featured;
+			height: $person-image-featured;
+		}
+
+		small {
+			margin-top: rem(4px);
+			font-size: rem(16px);
+		}
+	}
+
+
+
+	// PERSONS BIG
+	// --------------------------------------------------
+	.persons-big &,	&.persons-big {
+		font-size: rem(20px);
+
+		img {
+			margin-bottom: rem(23px);	
+			width: $person-image-big;
+			height: $person-image-big;
+		}
+
+		small {
+			font-size: rem(14px);
+		}
+	}
+
+
+
+	// PERSONS SMALL
+	// --------------------------------------------------
+	.persons-small &, &.persons-small {
+
+		img {
+			width: $person-image-small;
+			height: $person-image-small;
+		}
+
+		small {
+			color: $body-color;
+		}
+	}
+
+
+
+	// PERSONS MINI
+	// --------------------------------------------------
+	.persons-mini &, &.persons-mini {
+		text-align: left;
+		font-size: rem(14px);
+
+		img {
+			display: none;			
+		}
+
+		small {
+			font-size: rem(12px);
+			margin-top: rem(3px);
+			color: #777;
+		}
+	}
+}
+
+
+// spacing
+// --------------------------------------------------
+.row > .person {
+	margin: $grid-gutter-width-xs 0;
+	@include media-breakpoint-up(sm) {margin: $grid-gutter-width 0;}
+	@include media-breakpoint-up(xl) {margin: $grid-gutter-width-xl 0;}
+}

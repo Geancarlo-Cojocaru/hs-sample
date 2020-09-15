@@ -1,0 +1,98 @@
+//
+// MENU TAGS DEVICES
+// --------------------------------------------------
+@include media-breakpoint-down($breakpoint-colaps) {
+	.menu-tags {
+		margin: $nume-categorie-margin;
+		@include media-breakpoint-down(xs) {
+      margin: $nume-categorie-margin-xs;
+    }
+
+		.bloc-submenu-name {			
+			font-size: $nume-categorie-font-size;
+			font-weight: $nume-categorie-font-weight;
+			color: $nume-categorie-color;
+
+			// în modal
+			.modal & {
+				font-size: rem(26px);
+			}			
+		}
+
+		.bloc-element {
+			margin: 20px 0px 24px 0px;
+			padding-top: 10px;
+			border-top: 1px solid rgba(#000, 0.06);
+
+			&:only-child {
+				padding-top: 0;
+				border: none;				
+			}
+		}
+
+		.bloc-name {
+			margin: 6px 0px 14px 0px;
+			font-family: $font-family-serif;
+			color: $nume-categorie-color;
+			font-weight: $nume-categorie-font-weight;
+			font-size: rem(13px);
+			text-transform: uppercase;						
+		}
+
+		ul.tags-checkbox {
+			margin-right: -17px;
+			margin-left: -17px;
+		}
+
+		.buton-jos {
+			padding: 4px 0px 10px 0px;
+		}
+	}
+}
+
+
+
+//
+// MENU TAGS LARGE
+// --------------------------------------------------
+@include media-breakpoint-up($breakpoint-extinde) {
+	.menu-tags {
+		margin: auto;
+		width: 100%;
+    padding: 30px 0px 50px 0px;
+    @include media-breakpoint-up(xl) {padding: 40px 0px 70px 0px;}
+
+		.bloc-submenu-name {
+      margin: $nume-categorie-lg-margin;
+      font-family: $nume-categorie-font-family;
+      font-size: $nume-categorie-lg-font-size;
+      font-weight: $nume-categorie-lg-font-weight;
+      color: $nume-categorie-lg-color;
+      text-transform: $nume-categorie-lg-text-transform;
+      white-space: nowrap;
+      @include media-breakpoint-up(xl) {font-size: $nume-categorie-xl-font-size;}
+    }
+
+    .bloc-element,
+    .buton-jos {
+      margin-top: rem(36px);
+
+      @include media-breakpoint-up(xl) {
+        margin-top: rem(46px);
+      }
+    }
+
+
+    .bloc-name {
+      margin-bottom: rem(18px);
+      font-family: $font-family-serif;
+      font-size: rem(18px);
+      color: $headings-color;
+      font-weight: bold;
+
+      @include media-breakpoint-up(xl) {
+        margin-bottom: rem(25px);
+      }
+    }
+	}
+}

@@ -1,0 +1,155 @@
+//
+// GENERAL
+// order in "element-*-*" mixins for media queries: xs, sm, md, lg, xl;
+// --------------------------------------------------
+article.list {
+	width: 100%;
+
+
+
+	// Spacing
+	// --------------------------------------------------
+	margin: $grid-gutter-width-xs 0;
+	padding: 0 $grid-gutter-width-xs;
+
+	@include media-breakpoint-up(sm) {
+		margin: $grid-gutter-width 0;
+		padding: 0 $grid-gutter-width;
+	}
+
+	@include media-breakpoint-up(xl) {
+		margin: $grid-gutter-width-xl 0;
+		padding: 0 $grid-gutter-width-xl;
+	}
+
+
+
+	// Headings
+	// --------------------------------------------------
+	h1, h2, h3, h4, h5, h6 {
+		margin: 0;
+		font-family: $font-family-serif;
+	}
+
+
+	h1 {
+		@include element-top-margins ($mt-xs: 25px, $mt-md: 32px, $mt-lg: 4px);
+		@include element-font-sizes ($fz-xs: 22px, $fz-sm: 28px, $fz-md: 36px, $fz-lg: 40px, $fz-xl: 42px);
+		@include element-line-heights ($lh-xs: 1.2727, $lh-sm: 1.2857, $lh-md: 1.1428);
+	}
+
+
+	h2 {
+		@include element-top-margins ($mt-xs: 22px, $mt-sm: 1px);
+		@include element-font-sizes ($fz-xs: 20px, $fz-sm: 22px, $fz-lg: 28px);
+		@include element-line-heights ($lh-xs: 1.3, $lh-sm: 1.2857);
+	}
+
+
+	h3 {
+		@include element-top-margins ($mt-sm: 24px);
+		@include element-font-sizes ($fz-xs: 18px, $fz-lg: 20px);
+		@include element-line-heights ($lh-xs: 1.2727, $lh-lg: 1.3);
+	}
+
+
+	h4 {
+		@include element-top-margins ($mt-sm: 18px, $mt-lg: 21px);
+		@include element-font-sizes ($fz-xs: 15px, $fz-lg: 18px);
+		@include element-line-heights ($lh-xs: 1.3125, $lh-lg: 1.33333);
+	}
+
+
+	h5 {
+		@include element-top-margins ($mt-sm: 18px, $mt-lg: 19px);
+		@include element-font-sizes ($fz-xs: 15px, $fz-lg: 16px);
+		line-height: 1.3125;
+	}
+
+
+	// Preview
+	// --------------------------------------------------
+	.preview {
+		font-size: rem(14px);		
+		@include element-top-margins ($mt-xs: 17px, $mt-lg: 18px);
+
+		p {
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+
+	// TAGS TEXT
+	// --------------------------------------------------
+	.tags-text {
+		@include element-top-margins ($mt-xs: 14px, $mt-lg: 17px);
+	}
+
+
+
+	// CLEAN UP ARTYCLE TYPES
+	// --------------------------------------------------
+	&.featured-article, &.big-article, &.small-article, &.mini-article {	
+		@include media-breakpoint-down(xs) {
+			.article-image {
+				padding: 0;
+				margin: 0;
+				min-width: 100%;
+				width: auto;			
+				float: none;
+			}
+
+			&:before {
+				display: none;			
+			}
+		}
+	}
+
+
+
+	// COMMON Small & mini article
+	// --------------------------------------------------
+	&.small-article, &.mini-article {
+		.preview {display: none;}
+	}
+
+
+	// ANIMATIONS
+	// --------------------------------------------------
+	@include media-breakpoint-up(lg) {
+		.article-image:hover ~ h1 a,
+		.article-image:hover ~ h2 a,
+		.article-image:hover ~ h3 a,
+		.article-image:hover ~ h4 a,
+		.article-image:hover ~ h5 a {
+			color: $primary;
+		}
+	}
+
+
+
+	// ICONS FOR ARTYCLE TYPE
+	// --------------------------------------------------
+	[class^='icon-'] {
+		position: absolute;
+		overflow: hidden;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+
+		@include icon-type-sizes-positions(
+			$sz-xs: 22px, $pos-xs: 6px,
+			$sz-sm: 26px, $pos-sm: 9px,
+			$sz-md: 34px, $pos-md: 12px,
+			$sz-lg: 38px,
+			$sz-xl: 42px, $pos-xl: 15px);
+	}
+
+	.icon-gallery {
+		background-image: url(#{$path--images}/icons/articol-galerie.svg);		
+	}
+
+	.icon-video {
+		background-image: url(#{$path--images}/icons/articol-video.svg);		
+	}
+}

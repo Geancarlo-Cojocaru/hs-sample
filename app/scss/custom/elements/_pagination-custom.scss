@@ -1,0 +1,40 @@
+//
+// PAGINATION
+// --------------------------------------------------
+.pagination-custom {
+	display: flex;
+
+	.more {
+		display: none;
+		@include media-breakpoint-up(sm) {
+			display: block;
+			flex: 1 1 auto;
+			text-align: right;
+		}
+	}
+
+	.pages {
+		display: flex;
+
+		.btn {
+			margin: 0px 3px;
+			padding-left: 5px;
+			padding-right: 5px;
+			min-width: 35px;
+
+			&:first-child {margin-left: 0;}
+
+			&.current {
+				color: #fff;
+				background-color: $primary;
+			}
+
+			@include media-breakpoint-up(md) {
+				font-size: rem(14px);
+				min-width: 49px;
+				padding-top: rem(17px);
+				padding-bottom: rem(16px);
+			}
+		}
+	}	
+}

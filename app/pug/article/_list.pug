@@ -1,0 +1,57 @@
+//-
+//- ARTICLE LIST DEFAULT, ALL OPTIONS
+//- --------------------------------------------------
+//-
+	Se apelează mixinul cu
+	+articleList(array)
+
+	Se poate limita nr. de lemente afișate cu
+	+articleList(array)(nrElemente=x)
+
+	Se poate determina modul de afișare al tuturor elementelor default cu (listTypeClass='tip-articol'), de ex
+	+articleList(array)(listTypeClass='small-article')
+
+	Se poate renunța la imagini cu (noImageArticle='no-image'), de ex
+	+articleList(array)(noImageArticle='no-image')
+
+	Se poate stabili lungimea textului preview cu (previewTextLength='lungime'), de ex
+	+articleList(array)(previewTextLength='120')
+
+	Sunt cazuri în care vrem ca anumite elemente să fie afișate diferit în lista default; forma de bază este
+	+articleList(array1, array2)
+	De exemplu, dacă vreau ca primul articol să fie 'featured-article', al doilea 'small-article' și restul default scriu:
+
+	+articleList(array, [{'elemNo':1,'typeClass':'featured-article'}, {'elemNo':2,'typeClass':'small-article'}])
+
+	- unde 'elem' este nr. articolului pornind de la 1 (nu zero)
+	- iar 'tip' reprezintă tipul de afișare diferit de default ('featured-article', 'big-article', 'small-article', 'mini-article')
+
+	Dacă vrem să suprascriem tipul de imagine folosim (imageTypeClass='tip-articol') de ex
+	+articleList(array)(imageTypeClass='big-article')
+
+	Dacă vrem să suprascriem tipul de heading din titlu (titleTypeClass='tip-articol') de ex
+	+articleList(array)(titleTypeClass='big-article')
+
+
+
+
+mixin articleList(array, specials = [])
+	
+	//- verificator pt date constructor, poate avem o eroare în nume
+	if(array === undefined || array.length == 0)
+		p no data for build
+
+	//- constructor cu limitator pt. nr de articole; compensăm numărătoarea de la 0 (vreau 2 articole, trec 2)
+	else
+		each article, index in array.slice(0, attributes.nrElemente)
+
+			-var holder = ''
+
+			//- comparăm indexul din lista de articole cu numărul elementului pe care îl vrem modificat
+					compensăm numărătoarea standard de la 0 (așa că dacă vreau al 2-lea articol modificat, trec 2)
+			each special, i in specials
+				if (index === special.elemNo - 1)
+					-holder = special.typeClass
+			
+			//- mixin de articol cu parametri
+			+article(article)(imageTypeClass!=attributes.imageTypeClass, titleTypeClass!=attributes.titleTypeClass, listTypeClass!=holder || attributes.listTypeClass, noImageArticle!=attributes.noImageArticle, nrElemente!=attributes.nrElemente - 1, previewTextLength!=attributes.previewTextLength)

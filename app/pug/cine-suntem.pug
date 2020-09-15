@@ -1,0 +1,53 @@
+//- VARIABILE
+//-=========================================================================
+- var titlu = 'Cine suntem';
+
+include article/_person.pug
+include article/__data-persons.pug
+include _elements/_abonare-newsletter.pug
+include _elements/_subjects.pug
+
+
+//- HTML
+//-=========================================================================
+doctype html
+html
+	include _elements/_head.pug
+	body
+
+		// navigation 
+		include navigation/_main-menu.pug
+
+		.container-fluid
+
+			// SUBIECTE
+			.container-subiecte
+				+subjects([{tagValue: 'cine suntem'}])
+			
+			// CONȚINUT 
+			.row.full-spacing
+				.col-md-8.col-lg-6
+					h1.h2.full-spacing-bottom Cine suntem
+					.article-content
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				.col-md-4.col-lg-6.text-md-right.align-self-end
+					a.btn.btn-lg.btn-primary.mt-4.mb-2(href="#") Contactează-ne
+
+
+			// LISTING PERSOANE MARI 
+			.half-spacing-bottom
+				.row.persons-big.elem-2.elem-md-3.elem-lg-6
+					+personList(bigPersons)
+
+
+			// LISTING PERSOANE
+			.border-top.half-spacing
+				.row.elem-2.elem-sm-3.elem-md-4.elem-lg-6
+					+personList(persons)
+
+
+			// ABONARE NEWSLETTER 
+			+abonareNewsletter(class='border-top')
+
+		//- FOOTER
+		include _elements/_footer.pug

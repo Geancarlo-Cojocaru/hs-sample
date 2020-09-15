@@ -1,0 +1,29 @@
+//- VARIABILE
+//-=========================================================================
+- var titlu = 'Detaliu articol gallery';
+
+include article/_detail.pug
+include article/_article.pug
+include article/_person.pug
+include article/_list.pug
+include article/__data-listing-articles.pug
+include article/_comments.pug
+include article/_comments-post.pug
+
+
+//- HTML
+//-=========================================================================
+doctype html
+html
+	include _elements/_head.pug
+	body
+
+		// navigation 
+		include navigation/_main-menu.pug
+
+		.container-fluid
+			+articleDetail(articleDetailGallery)
+
+
+		//- FOOTER
+		include _elements/_footer.pug

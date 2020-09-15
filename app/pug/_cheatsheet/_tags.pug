@@ -1,0 +1,81 @@
+//- TAGS
+//-=========================================================================
+include ../article/_tags.pug
+
+
+
+//- DATA
+//-____________________________________________________
+-
+	var theTags = [{tagValue: 'fotbal'}, {tagValue: 'antrenori'}, {tagValue: 'național'}]
+
+
+
+h1.cheatsheet Tags
+br
+
+.row
+
+	.col-lg-2
+		p.cheatsheet tag normal
+
+		.tags-text
+			+tag('Simple tag')
+
+
+	.col-lg-2
+		p.cheatsheet tag bloc
+
+		.block-tags
+			.tags-text
+				+tag('Block tag')
+
+
+	.col-lg-2
+		p.cheatsheet tag buton
+
+		+tag('Button tag', 'tags-button')
+
+
+	.col-lg-2
+		p.cheatsheet tag checkbox
+
+		+tag('Checkbox tag', 'tags-checkbox')
+
+
+	.col-lg-6
+		p.cheatsheet listă tag buton
+
+		+tagList(theTags)
+
+
+	.col-lg-6
+		p.cheatsheet listă tag bloc
+
+		.block-tags
+			+tagList(theTags)
+
+
+	.col-lg-6
+		p.cheatsheet listă tag buton; dacă e unul singur elem in lista dispare iconița de close
+
+		+tagList(theTags, 'tags-button')
+
+
+	.col-lg-6
+		p.cheatsheet listă tag checkbox
+
+		+tagList(theTags, 'tags-checkbox')
+
+	.col-lg-6
+		p.cheatsheet listă tag buton fară iconiță close
+
+		+tagList(theTags, 'tags-button')(class='no-icon')
+
+	.col-lg-6
+		p.cheatsheet listă subiecte
+
+		include ../_elements/_subjects.pug
+		+subjects(theTags)
+
+	
